@@ -413,3 +413,39 @@
 **Наступний крок (День 15+):**
 - GitHub-репо + auto-deploy через Cloudflare Pages GitHub integration.
 - Custom domain (якщо є).
+
+## 2026-06-06 — День 15: GitHub + CI/CD auto-deploy
+
+**Зроблено:**
+- **`git init -b main`** + перший комміт `8238557` («initial commit») усього проекту (`.gitignore` уже існував, блокує `dist/`, `.wrangler/`, `__pycache__/`, `.venv/`, `.env`).
+- **GitHub repo створено:** `gh repo create legitimacy-dash --public --source=. --remote=origin --push`. URL: **https://github.com/vavilon431/legitimacy-dash**.
+- **`.github/workflows/deploy.yml`** — GitHub Actions pipeline на `push: main` і `workflow_dispatch`:
+  1. checkout
+  2. setup-python 3.13
+  3. `pip install pyyaml requests matplotlib`
+  4. `python scripts/validate_data.py --no-links`
+  5. `python scripts/build.py --clean --og` (з регенерацією OG-карток)
+  6. `cloudflare/wrangler-action@v3` → `pages deploy dist --project-name=legitimacy-dash --branch=main`
+- **Secrets у GH repo** додано через `gh secret set`:
+  - `CLOUDFLARE_API_TOKEN` — з локального env-var (той самий токен, що для ручного wrangler).
+  - `CLOUDFLARE_ACCOUNT_ID` = `dc00a025...`.
+- **Комміт `a8391ff`** з workflow → push → workflow стартував.
+- **Перший CI-деплой:** ✓ success за **48 секунд** (run #27073522241). Прод оновлений з нового артефакту.
+
+**Новий цикл розробки:**
+```
+edit files locally → git commit → git push origin main → CI builds + deploys automatically
+```
+
+Ручний `wrangler pages deploy` лишається доступним як fallback (наприклад, якщо хочемо preview-deploy не з main).
+
+**Cloudflare Pages source:** як був Direct Upload, так і залишився. Pages не знає про GitHub repo — Actions просто завантажують dist/ через wrangler API. Це чисто, бо ми не покладаємось на GH App-інтеграцію Cloudflare (яка вимагає UI-кліків і ставить дещо інший pipeline).
+
+**Поточний стан:**
+- Сайт **https://legitimacy-dash.pages.dev** автоматично оновлюється з кожним push.
+- Репо публічний: код, дані, історія — все доступно.
+
+**Наступний крок (День 16+):**
+- Custom domain (якщо є).
+- Опційно: PR-preview deploy у тому ж workflow (`--branch=preview` для не-main гілок).
+- Опційно: badge статусу CI в README.
