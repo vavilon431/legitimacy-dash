@@ -489,3 +489,28 @@ edit files locally → git commit → git push origin main → CI builds + deplo
 - Custom domain (якщо буде).
 - README badge статусу CI.
 - PR-preview deploy.
+
+## 2026-06-07 — День 17: housekeeping (README badges + PR-preview)
+
+**Зроблено:**
+- **README перероблено:**
+  - Додано два badge — Cloudflare Deploy status (з GH Actions) і Live-site (легка плашка на `legitimacy-dash.pages.dev`).
+  - Live URL винесено явно зверху, не лише у форматі стенки тексту.
+  - Розширено секцію «Швидкий старт» актуальними командами (валідація → build → serve dist).
+  - Додано секцію «Деплой», що пояснює: push на main → 50-60 с до live; PR з не-main гілки → preview URL у коментарі PR.
+- **`.github/workflows/deploy.yml`** — підтримка PR-preview:
+  - Triggers: `push: [main]` + `pull_request: [main]` + `workflow_dispatch`.
+  - `permissions: pull-requests: write` для коментарів.
+  - Новий крок `Resolve deploy branch`: для PR → `pr-<number>`, для push → `main`. Передається у wrangler як `--branch=…`. Cloudflare Pages автоматично створює окремий preview environment для не-main гілок.
+  - Крок `Comment preview URL on PR` через `actions/github-script@v7`: створює коментар з посиланням, або updates існуючий (одне stick-комент на PR, не плодити).
+- **Auto-deploy:** commit `d60ca0d` → CI success **38 с** (run #27074343934). Прод оновлено з новим README.
+
+**Як це використовувати:**
+- Звичайна робота — push на main → live за хвилину.
+- Експеримент → `git checkout -b feature/x` → push → PR → у PR з'являється коментар `Preview deployed: https://abc123.legitimacy-dash.pages.dev`. Кожен новий push на гілку оновлює той самий коментар.
+
+**Наступний крок (День 18+):**
+- Custom domain (якщо буде).
+- Опційно: експорт сирих JSON-даних кнопкою «Завантажити».
+- Опційно: переключач dark/light теми.
+- Опційно: changelog/news блок для повертаючих користувачів.
