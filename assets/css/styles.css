@@ -219,6 +219,17 @@ html, body {
   font-family: var(--mono);
 }
 
+.hero-history {
+  margin-top: 1.8rem;
+  height: 360px;
+  min-height: 360px;
+}
+
+#history-canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
 /* ---------- AXIS SECTIONS ---------- */
 .axis-header {
   display: flex;

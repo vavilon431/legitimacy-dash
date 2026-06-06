@@ -2,6 +2,7 @@
 // Single-page runtime. Sections register themselves via init(lang, data).
 
 import { initRadar } from './radar.js';
+import { initHistory } from './history.js';
 import { initTimeline } from './timeline.js';
 import { initMap } from './map.js';
 import { initPolls } from './polls.js';
@@ -76,6 +77,7 @@ async function renderSections(lang) {
   // Modules are independent and may fail individually; don't let one block others.
   await Promise.allSettled([
     initRadar(lang),
+    initHistory(lang),
     initTimeline(lang),
     initMap(lang),
     initPolls(lang),

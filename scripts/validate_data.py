@@ -340,6 +340,37 @@ def validate_territory(rep: Report) -> list[str]:
     return urls
 
 
+def validate_history(rep: Report) -> None:
+    path = DATA / "legitimacy_history.csv"
+    if not path.exists():
+        rep.warn("legitimacy_history.csv", "file not found (optional)")
+        return
+    seen_pairs: set[tuple[str, str]] = set()
+    for i, row in enumerate(_read_csv(path)):
+        where = f"legitimacy_history.csv::row[{i}]"
+        q = row.get("quarter") or ""
+        if not q or not q.split("-")[0].isdigit() or "-Q" not in q:
+            rep.error(where, f"quarter '{q}' must be 'YYYY-Q[1-4]'")
+        actor = row.get("actor") or ""
+        if actor not in ALLOWED_ACTOR:
+            rep.error(where, f"actor '{actor}' not in {sorted(ALLOWED_ACTOR)}")
+        if q and actor:
+            key = (q, actor)
+            if key in seen_pairs:
+                rep.error(where, f"duplicate (quarter, actor): {key}")
+            seen_pairs.add(key)
+        d = row.get("date_end") or ""
+        if not _is_iso_date(d):
+            rep.error(where, f"date_end '{d}' is not ISO YYYY-MM-DD")
+        for col in ("axis_a", "axis_b", "axis_c", "axis_d", "total"):
+            try:
+                v = float(row.get(col) or "")
+                if not (0 <= v <= 100):
+                    rep.error(where, f"{col}={v} out of [0,100]")
+            except ValueError:
+                rep.error(where, f"{col} must be a number")
+
+
 def check_urls(urls: list[str], rep: Report) -> None:
     try:
         import requests
@@ -399,6 +430,7 @@ def main() -> int:
     urls += validate_polls(rep, "polls_ru.csv", "RU")
     urls += validate_indices(rep)
     urls += validate_territory(rep)
+    validate_history(rep)
 
     if not args.no_links:
         check_urls(urls, rep)

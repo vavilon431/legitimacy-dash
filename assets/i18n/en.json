@@ -23,7 +23,9 @@
     "placeholder": "⏳ The chart will be available on Day 3, once we populate data/axes.yaml with scores.",
     "loading": "⏳ Loading…",
     "note": "Axes A and B — calculated from sources (high confidence). C and D — preliminary pending polls and indices (Days 4-5).",
-    "as_of": "As of:"
+    "as_of": "As of:",
+    "history_loading": "⏳ Loading dynamics…",
+    "history_note": "Total score = weighted mean of 4 axes (0.25 each). Quarterly snapshots from the 2022 invasion to now. Vertical markers mark key events."
   },
   "axis_a": {
     "title": "Legal-electoral legitimacy",

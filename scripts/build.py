@@ -47,6 +47,7 @@ POLLS_NUMERIC = {"trust_pct", "margin_error_pct"}
 INDICES_NUMERIC = {"value"}
 INDICES_INT = {"year"}
 TERRITORY_NUMERIC = {"ua_control_pct"}
+HISTORY_NUMERIC = {"axis_a", "axis_b", "axis_c", "axis_d", "total"}
 
 
 def _json_default(o: Any) -> str:
@@ -211,12 +212,14 @@ def main() -> int:
     csv_to_json("polls_ua.csv", out_data, numeric=POLLS_NUMERIC)
     csv_to_json("polls_ru.csv", out_data, numeric=POLLS_NUMERIC)
     csv_to_json("indices.csv", out_data, numeric=INDICES_NUMERIC, integer=INDICES_INT)
+    extra_names: list[str] = []
     if (DATA / "territory_control.csv").exists():
         csv_to_json("territory_control.csv", out_data, numeric=TERRITORY_NUMERIC)
-        names = ("polls_ua", "polls_ru", "indices", "territory_control")
-    else:
-        names = ("polls_ua", "polls_ru", "indices")
-    for n in names:
+        extra_names.append("territory_control")
+    if (DATA / "legitimacy_history.csv").exists():
+        csv_to_json("legitimacy_history.csv", out_data, numeric=HISTORY_NUMERIC)
+        extra_names.append("legitimacy_history")
+    for n in ("polls_ua", "polls_ru", "indices", *extra_names):
         print(f"  {n}.csv -> {n}.json")
 
     if args.og:
