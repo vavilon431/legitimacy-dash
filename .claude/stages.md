@@ -449,3 +449,43 @@ edit files locally → git commit → git push origin main → CI builds + deplo
 - Custom domain (якщо є).
 - Опційно: PR-preview deploy у тому ж workflow (`--branch=preview` для не-main гілок).
 - Опційно: badge статусу CI в README.
+
+## 2026-06-06 — День 16: історичний графік легітимності 2022-2026
+
+**Зроблено:**
+- **`data/legitimacy_history.csv`** — 36 рядків (18 кварталів × 2 актори), 2022-Q1 — 2026-Q2.
+  - Поля: `quarter`, `date_end`, `actor`, `axis_a`, `axis_b`, `axis_c`, `axis_d`, `total`.
+  - `total` = середнє зважене 4 осей (кожна по 0.25), як у axes.yaml.
+  - Ретроспективні оцінки кожної осі обраховані з: подій (вторгнення 2022-Q1, Харків 2022-Q3, Херсон 2022-Q4, ICC ордер 2023-Q1, ТОТ-вибори Путіна 2024-Q1, закінчення терміну Зеленського 2024-Q2), polls/Levada рейтингів, V-Dem/FH/RSF історичних значень, % контролю території з `territory_control.csv`.
+  - **Ключові точки:**
+    - 2022-Q1 — Zelensky **81.5**, Putin 47.25
+    - 2022-Q3 (Харків) — Zelensky **85.5** (пік), Putin 44.0
+    - 2023-Q1 (ICC) — Zelensky 85.0, Putin **41.75** (B 35→32 після ордера)
+    - 2024-Q2 (закінчення терміну Z) — Zelensky **77.25** (A 94→80)
+    - 2026-Q2 (поточний) — Zelensky 75.5, Putin 40.25
+- **`scripts/validate_data.py`** — нова `validate_history()`: формат `quarter`, ISO `date_end`, `actor` у allowlist, унікальність `(quarter, actor)`, `[0,100]` на всі 5 числових колонок.
+- **`scripts/build.py`** — `HISTORY_NUMERIC = {axis_a, axis_b, axis_c, axis_d, total}`, опційна конверсія.
+- **`assets/js/history.js`** — новий модуль:
+  - Chart.js line chart, дві серії (Z синім, P червоним).
+  - Кастомний `markerPlugin` додає вертикальні пунктирні лінії з підписами на 4 inflection points: «Вторгнення», «Харків», «Ордер ICC», «Кінець терміну Z» (UK/EN).
+  - Y-діапазон обрізаний до 30-100 (не 0-100), щоб видно було розкид.
+  - `interaction: { mode: 'index' }` — hover показує обидві серії одночасно.
+- **`index.html`** — нова `<div id="history-chart">` у hero після `hero-radar-wrap`, з loading і note-абзацом.
+- **`assets/js/main.js`** — `initHistory(lang)` доданий у `Promise.allSettled`.
+- **i18n:** `hero.history_loading`, `hero.history_note`. **75/75 ключі симетрично.**
+- **CSS:** `.hero-history` — 360 px висота, `#history-canvas` 100%×100%.
+
+**Auto-deploy через GH Actions:**
+- Commit `bcf0e25` → push → CI запустився автоматично → success за **53 с** (run #27073670036).
+- Прод оновлено: https://legitimacy-dash.pages.dev. Дані по 36 рядків віддаються.
+
+**Поточний стан:**
+- Hero тепер містить **два візуали**: статичний радар (поточний зріз) + динамічний лінійний графік (2022-2026 еволюція). Разом дають повну картину «звідки прийшли і де зараз».
+- 7 секцій з робочими візуалізаціями (radar + history + timeline + map + polls + indices + DeepStateMAP iframe), 6 секцій сайту.
+
+**Caveat:** історичні оцінки A/B/C/D — це reasoning з відомих подій, не сертифіковані метрики. Метод: brzeegne моменти зміни (term ends, ICC warrants, territorial shifts) дають stepwise jumps; між ними — лінійна тенденція з polls/indices.
+
+**Наступний крок (День 17+):**
+- Custom domain (якщо буде).
+- README badge статусу CI.
+- PR-preview deploy.
