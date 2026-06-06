@@ -1,0 +1,153 @@
+# icc_un_docs.yaml — офіційні документи міжнародних інстанцій,
+# що впливають на вісь B (міжнародне визнання).
+#
+# Поля: див. CLAUDE.md секція "Архітектура → data/".
+# День 2: 12 ключових документів ICC / UN / CoE / EU / US Treasury.
+
+schema_version: 1
+
+documents:
+
+  - id: icc-warrant-putin-2023
+    issuer: ICC
+    doc_type: warrant
+    date: "2023-03-17"
+    target_actor: putin
+    title_uk: "Ордер на арешт В. Путіна за незаконне вивезення дітей з України"
+    title_en: "ICC arrest warrant for V. Putin over unlawful deportation of children from Ukraine"
+    summary_uk: "Палата попереднього розгляду ICC видала ордер на арешт президента РФ В. Путіна за воєнний злочин незаконного вивезення (ст. 8(2)(a)(vii)) і незаконного переміщення (ст. 8(2)(b)(viii)) дітей з окупованих територій України до РФ. Окремий ордер видано на Уповноваженого з прав дитини при президенті РФ М. Львову-Бєлову."
+    summary_en: "The ICC Pre-Trial Chamber issued an arrest warrant for President V. Putin for the war crime of unlawful deportation (Art. 8(2)(a)(vii)) and unlawful transfer (Art. 8(2)(b)(viii)) of children from occupied Ukrainian territories to Russia. A separate warrant was issued for Children's Rights Commissioner M. Lvova-Belova."
+    source_url: "https://www.icc-cpi.int/news/situation-ukraine-icc-judges-issue-arrest-warrants-against-vladimir-vladimirovich-putin-and"
+    impact: negative_to_target
+
+  - id: icc-warrant-shoigu-gerasimov-2024
+    issuer: ICC
+    doc_type: warrant
+    date: "2024-06-25"
+    target_actor: null
+    title_uk: "Ордери на арешт С. Шойгу і В. Герасимова за атаки на енергетику України"
+    title_en: "Arrest warrants for S. Shoigu and V. Gerasimov for attacks on Ukraine's energy infrastructure"
+    summary_uk: "Палата попереднього розгляду II видала ордери на арешт колишнього міністра оборони РФ С. Шойгу і начальника Генштабу В. Герасимова за воєнні злочини скеровування атак на цивільні об'єкти (ст. 8(2)(b)(ii)) та непропорційну шкоду цивільному населенню в результаті атак на українську електромережу (10.2022 - 03.2023). Окремо інкриміновано злочин проти людяності."
+    summary_en: "Pre-Trial Chamber II issued arrest warrants for former Russian Defence Minister S. Shoigu and Chief of General Staff V. Gerasimov for war crimes of directing attacks at civilian objects (Art. 8(2)(b)(ii)) and inflicting excessive incidental harm during attacks on Ukraine's power grid (Oct 2022 – Mar 2023). A crime against humanity was also charged."
+    source_url: "https://www.icc-cpi.int/news?search=shoigu"
+    impact: negative_to_target
+
+  - id: icc-warrant-kobylash-sokolov-2024
+    issuer: ICC
+    doc_type: warrant
+    date: "2024-03-05"
+    target_actor: null
+    title_uk: "Ордери на С. Кобилаша і В. Соколова за атаки на цивільну інфраструктуру"
+    title_en: "Arrest warrants for S. Kobylash and V. Sokolov for attacks on civilian infrastructure"
+    summary_uk: "ICC видав ордери на командувача далекої авіації РФ ген. С. Кобилаша і командувача Чорноморського флоту адм. В. Соколова за воєнні злочини скеровування атак на цивільні об'єкти та непропорційну шкоду в результаті ракетних ударів по електроенергетичній інфраструктурі України."
+    summary_en: "ICC issued arrest warrants for the commander of Russia's Long-Range Aviation Gen. S. Kobylash and Black Sea Fleet commander Adm. V. Sokolov for war crimes of directing attacks at civilian objects and inflicting excessive incidental damage through missile strikes on Ukraine's energy infrastructure."
+    source_url: "https://www.icc-cpi.int/news/situation-ukraine-icc-judges-issue-arrest-warrants-against-sergei-ivanovich-kobylash-and"
+    impact: negative_to_target
+
+  - id: unga-es-11-1-aggression-2022
+    issuer: UN_GA
+    doc_type: resolution
+    date: "2022-03-02"
+    target_actor: null
+    title_uk: "Резолюція ГА ООН ES-11/1 'Aggression against Ukraine'"
+    title_en: "UNGA Resolution ES-11/1 'Aggression against Ukraine'"
+    summary_uk: "Надзвичайна спеціальна сесія ГА ООН ухвалила резолюцію, що 'у найсильніших висловах засуджує агресію Російської Федерації проти України', вимагає негайно і безумовно вивести всі російські війська з міжнародно визнаної території України. Голосування: 141 'за', 5 'проти' (РФ, Білорусь, КНДР, Сирія, Еритрея), 35 утрималися."
+    summary_en: "UNGA Emergency Special Session adopted a resolution that 'deplores in the strongest terms the aggression by the Russian Federation against Ukraine', demanding the immediate, complete and unconditional withdrawal of Russian forces from internationally recognised Ukrainian territory. Vote: 141 in favour, 5 against (RF, Belarus, DPRK, Syria, Eritrea), 35 abstentions."
+    source_url: "https://digitallibrary.un.org/record/3965290"
+    impact: negative_to_target
+
+  - id: unga-es-11-3-hrc-suspension-2022
+    issuer: UN_GA
+    doc_type: resolution
+    date: "2022-04-07"
+    target_actor: null
+    title_uk: "Резолюція ГА ООН ES-11/3 — призупинення членства РФ у Раді з прав людини"
+    title_en: "UNGA Resolution ES-11/3 — suspending Russia's UNHRC membership"
+    summary_uk: "Призупинення прав членства РФ у Раді ООН з прав людини у зв'язку з 'серйозними і систематичними порушеннями прав людини' в Україні (зокрема — повідомлення про вбивства цивільних у Бучі). Голосування: 93 'за', 24 'проти', 58 утрималися."
+    summary_en: "Suspension of Russia's membership rights in the UN Human Rights Council due to 'gross and systematic violations of human rights' in Ukraine (including reports of killings of civilians in Bucha). Vote: 93 in favour, 24 against, 58 abstentions."
+    source_url: "https://digitallibrary.un.org/record/3967778"
+    impact: negative_to_target
+
+  - id: unga-es-11-4-annexation-2022
+    issuer: UN_GA
+    doc_type: resolution
+    date: "2022-10-12"
+    target_actor: null
+    title_uk: "Резолюція ГА ООН ES-11/4 — невизнання спроби анексії"
+    title_en: "UNGA Resolution ES-11/4 — non-recognition of attempted annexation"
+    summary_uk: "Резолюція оголошує спробу анексії Донецької, Луганської, Запорізької, Херсонської областей України недійсною за міжнародним правом, закликає всі держави, ООН, міжнародні організації не визнавати її. Голосування: 143 'за', 5 'проти', 35 утрималися."
+    summary_en: "Resolution declares Russia's attempted annexation of Donetsk, Luhansk, Zaporizhzhia and Kherson oblasts of Ukraine null and void under international law, calls on all states, the UN, and international organizations not to recognise it. Vote: 143 in favour, 5 against, 35 abstentions."
+    source_url: "https://digitallibrary.un.org/record/3990341"
+    impact: negative_to_target
+
+  - id: unga-77-229-reparations-2022
+    issuer: UN_GA
+    doc_type: resolution
+    date: "2022-11-14"
+    target_actor: null
+    title_uk: "Резолюція ГА ООН A/RES/ES-11/5 — про репарації від РФ"
+    title_en: "UNGA Resolution A/RES/ES-11/5 — on reparations from Russia"
+    summary_uk: "Визнає, що РФ несе відповідальність за всі шкоди, заподіяні агресією проти України, включно з матеріальною. Закликає створити міжнародний механізм компенсації. Голосування: 94 'за', 14 'проти', 73 утрималися."
+    summary_en: "Recognises that Russia bears responsibility for all damage caused by its aggression against Ukraine, including material. Calls for an international compensation mechanism. Vote: 94 in favour, 14 against, 73 abstentions."
+    source_url: "https://digitallibrary.un.org/record/3994586"
+    impact: negative_to_target
+
+  - id: coe-expulsion-russia-2022
+    issuer: CoE
+    doc_type: decision
+    date: "2022-03-16"
+    target_actor: null
+    title_uk: "Рішення Комітету міністрів РЄ про припинення членства РФ"
+    title_en: "Decision of CoE Committee of Ministers terminating Russia's membership"
+    summary_uk: "Комітет міністрів Ради Європи ухвалив резолюцію CM/Res(2022)2: РФ перестає бути членом РЄ з 16.03.2022. Перший в історії організації випадок виключення. РФ перестає бути учасницею Конвенції про захист прав людини з 17.09.2022, ЄСПЛ зберігає юрисдикцію за фактами до цієї дати."
+    summary_en: "CoE Committee of Ministers adopted Resolution CM/Res(2022)2: Russia ceases to be a CoE member from 16.03.2022. The first expulsion in the organization's history. Russia ceased being a party to the European Convention on Human Rights from 17.09.2022; ECHR retains jurisdiction over facts before that date."
+    source_url: "https://www.coe.int/en/web/portal/-/the-russian-federation-is-excluded-from-the-council-of-europe"
+    impact: negative_to_target
+
+  - id: eu-sanctions-putin-2022
+    issuer: EU
+    doc_type: decision
+    date: "2022-02-25"
+    target_actor: putin
+    title_uk: "Персональні санкції ЄС проти В. Путіна (рішення Ради ЄС)"
+    title_en: "EU personal sanctions against V. Putin (EU Council decision)"
+    summary_uk: "Рада ЄС внесла В. Путіна і С. Лаврова до переліку фізичних осіб, до яких застосовуються обмежувальні заходи (заморозка активів). Регламент Ради 2022/336. Дія постійно продовжується."
+    summary_en: "EU Council added V. Putin and S. Lavrov to the list of natural persons subject to restrictive measures (asset freeze). Council Regulation 2022/336. Renewed periodically."
+    source_url: "https://www.consilium.europa.eu/en/press/press-releases/2022/02/25/russia-eu-adopts-sanctions-against-president-putin-and-foreign-minister-lavrov/"
+    impact: negative_to_target
+
+  - id: us-ofac-sanctions-putin-2022
+    issuer: G7
+    doc_type: decision
+    date: "2022-02-25"
+    target_actor: putin
+    title_uk: "Санкції OFAC США проти В. Путіна"
+    title_en: "US Treasury OFAC sanctions against V. Putin"
+    summary_uk: "Міністерство фінансів США (OFAC) внесло В. Путіна, С. Лаврова, начальника Генштабу В. Герасимова і міністра оборони С. Шойгу до санкційного списку SDN. Заморозка активів у юрисдикції США, заборона транзакцій з американськими особами."
+    summary_en: "US Treasury (OFAC) added V. Putin, S. Lavrov, Chief of General Staff V. Gerasimov, and Defence Minister S. Shoigu to the SDN list. Asset freeze in US jurisdiction, prohibition of transactions with US persons."
+    source_url: "https://home.treasury.gov/news/press-releases/jy0610"
+    impact: negative_to_target
+
+  - id: uk-sanctions-putin-2022
+    issuer: G7
+    doc_type: decision
+    date: "2022-03-15"
+    target_actor: putin
+    title_uk: "Санкції Великої Британії проти В. Путіна"
+    title_en: "UK sanctions against V. Putin"
+    summary_uk: "Уряд Великої Британії запровадив заморозку активів і заборону в'їзду для В. Путіна, С. Лаврова та інших високопосадовців РФ у рамках Russia (Sanctions) (EU Exit) Regulations 2019."
+    summary_en: "UK government imposed asset freeze and travel ban on V. Putin, S. Lavrov, and other senior Russian officials under the Russia (Sanctions) (EU Exit) Regulations 2019."
+    source_url: "https://www.gov.uk/government/collections/uk-sanctions-on-russia"
+    impact: negative_to_target
+
+  - id: venice-commission-russia-constitution-2021
+    issuer: CoE
+    doc_type: judgment
+    date: "2021-03-23"
+    target_actor: putin
+    title_uk: "Висновок Венеціанської комісії CDL-AD(2021)005 щодо поправок до Конституції РФ"
+    title_en: "Venice Commission Opinion CDL-AD(2021)005 on Russian constitutional amendments"
+    summary_uk: "Комісія критикує і процедуру (відсутність належного обговорення, голосування одним пакетом), і зміст: 'обнулення' попередніх термінів Путіна, верховенство російського законодавства над міжнародним, посилення повноважень президента — все це 'не відповідає європейським стандартам' і 'значно порушує баланс гілок влади'."
+    summary_en: "The Commission criticises both procedure (lack of proper debate, single-package vote) and substance: 'resetting' Putin's previous terms, primacy of Russian law over international law, expansion of presidential powers — all 'do not conform to European standards' and 'significantly disturb the balance between branches of power'."
+    source_url: "https://www.venice.coe.int/webforms/documents/default.aspx?pdffile=CDL-AD(2021)005-e"
+    impact: negative_to_target

@@ -1,0 +1,107 @@
+{
+  "meta": {
+    "title": "Legitimacy: a comparative dashboard",
+    "description": "Comparative dashboard of V. Zelensky's and V. Putin's legitimacy across four axes: legal-electoral, international, domestic support, territorial control and rule of law.",
+    "og_alt": "Legitimacy radar over 4 axes: Zelensky 76 vs Putin 40 (as of 2026-06-06)."
+  },
+  "site": {
+    "title": "Legitimacy Dashboard"
+  },
+  "a11y": {
+    "skip": "Skip to content"
+  },
+  "nav": {
+    "axis_a": "A. Legal-electoral",
+    "axis_b": "B. International",
+    "axis_c": "C. Support",
+    "axis_d": "D. Institutions",
+    "methodology": "Methodology"
+  },
+  "hero": {
+    "h1": "Legitimacy: Zelensky vs Putin",
+    "lede": "Four legitimacy axes, symmetric criteria, links to primary sources. No editorial opinions — only quotes from documents, polls, and international indices.",
+    "placeholder": "⏳ The chart will be available on Day 3, once we populate data/axes.yaml with scores.",
+    "loading": "⏳ Loading…",
+    "note": "Axes A and B — calculated from sources (high confidence). C and D — preliminary pending polls and indices (Days 4-5).",
+    "as_of": "As of:"
+  },
+  "axis_a": {
+    "title": "Legal-electoral legitimacy",
+    "intro": "Constitutional basis of election, mandate, conduct of elections, term length. What we count: turnout, vote share, opposition admittance, OSCE/ODIHR assessments, legal grounds for extending the term.",
+    "placeholder": "⏳ Elections timeline — Day 3.",
+    "loading": "⏳ Loading elections timeline…"
+  },
+  "axis_b": {
+    "title": "International recognition",
+    "intro": "Recognition as head of state, international court orders, sanctions regimes, membership in international fora. Sources: ICC, UN, official EU/G7 decisions.",
+    "placeholder": "⏳ Recognition and sanctions map — Day 4.",
+    "loading": "⏳ Loading map…",
+    "map_view": "View:",
+    "view_es111": "ES-11/1 (aggression, 2022)",
+    "view_es114": "ES-11/4 (annexation, 2022)",
+    "view_sanctions": "Personal sanctions",
+    "view_icc": "Rome Statute parties",
+    "docs_title": "Key documents"
+  },
+  "axis_c": {
+    "title": "Domestic support (trust)",
+    "intro": "Time series of trust ratings from independent pollsters. UA: KIIS, Razumkov, Rating. RU: Levada (foreign agent) separated from VTsIOM/FOM (state-owned). With confidence intervals.",
+    "placeholder": "⏳ Polls chart — Day 5.",
+    "loading": "⏳ Loading polls…",
+    "note": "UA: KIIS, Razumkov, Rating (all independent). RU: Levada (independent, 'foreign agent') + VTsIOM / FOM (state-owned). Each point is a real poll report; linear interpolation between points."
+  },
+  "axis_d": {
+    "title": "Territorial control and rule of law",
+    "intro": "V-Dem Liberal Democracy Index, Freedom House, RSF Press Freedom Index, % of controlled territory. Year-by-year dynamics.",
+    "placeholder": "⏳ Institutional indices — Day 5.",
+    "loading": "⏳ Loading indices…",
+    "index_label": "Index:",
+    "view_territory": "Territorial control",
+    "deepstate_title": "Open the interactive DeepStateMAP",
+    "deepstate_note": "External source — deepstatemap.live (Ukrainian crowdsourced project). Updated several times a day."
+  },
+  "methodology": {
+    "title": "Methodology",
+    "loading": "⏳ Loading formula and tables…",
+    "formula_title": "Aggregation formula",
+    "details_title": "Per-axis breakdown",
+    "col_axis": "Axis",
+    "col_weight": "Weight",
+    "col_points_z": "Zelensky",
+    "col_points_p": "Putin",
+    "col_confidence": "Confidence",
+    "col_as_of": "As of",
+    "col_total": "Total",
+    "col_id": "ID",
+    "col_component": "Component",
+    "col_evidence": "Evidence",
+    "gap_label": "gap",
+    "confidence": {
+      "high": "high",
+      "medium": "medium",
+      "preliminary": "preliminary",
+      "unknown": "—"
+    },
+    "p1": {
+      "title": "Symmetry.",
+      "body": "Every criterion applies to both actors under the same conditions."
+    },
+    "p2": {
+      "title": "Attribution.",
+      "body": "Every score is click-through to the formula and to the primary source."
+    },
+    "p3": {
+      "title": "Separating pollsters.",
+      "body": "Independent and state-owned polls are shown separately with labels."
+    },
+    "p4": {
+      "title": "Factual tone.",
+      "body": "Epithets only as quoted text with quotation marks and a link."
+    },
+    "contact": "Found an error in the data or sources? Drop a note — we fix it and add it to the changelog."
+  },
+  "footer": {
+    "updated": "Updated:",
+    "wip": "Work in progress."
+  }
+}

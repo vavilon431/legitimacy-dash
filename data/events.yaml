@@ -1,0 +1,378 @@
+# events.yaml — хронологія подій, що впливають на легітимність.
+#
+# Поля: див. CLAUDE.md секція "Архітектура → data/".
+# Принципи: симетричність, атрибуція, фактографічний тон.
+#
+# День 2: наповнено осі A (юридично-електоральна) і B (міжнародне визнання).
+# Осі C (опитування) і D (індекси) — у polls_*.csv та indices.csv (Дні 4-5).
+
+schema_version: 1
+
+events:
+
+# ============================================================
+# ВІСЬ A — ЮРИДИЧНО-ЕЛЕКТОРАЛЬНА. ZELENSKY
+# ============================================================
+
+  - id: zelensky-2019-round1
+    date: "2019-03-31"
+    actor: zelensky
+    axis: A
+    type: election
+    title_uk: "1-й тур президентських виборів — 30,24% голосів"
+    title_en: "Presidential election, 1st round — 30.24% of votes"
+    description_uk: "Зеленський здобув 30,24% у 1-му турі, П. Порошенко — 15,95%. Явка 62,86%. Вибори визнані ОБСЄ/ОДІПЛ загалом конкурентними."
+    description_en: "Zelensky received 30.24% in the 1st round, P. Poroshenko — 15.95%. Turnout 62.86%. OSCE/ODIHR assessed elections as generally competitive."
+    source_url: "https://www.cvk.gov.ua/pls/vp2019/wp300pt001f01=719.html"
+    source_title: "ЦВК України — підсумки голосування 31 березня 2019"
+    impact: positive
+
+  - id: zelensky-2019-round2
+    date: "2019-04-21"
+    actor: zelensky
+    axis: A
+    type: election
+    title_uk: "Перемога у 2-му турі — 73,22% голосів"
+    title_en: "Won 2nd round — 73.22% of votes"
+    description_uk: "73,22% голосів проти 24,45% у П. Порошенка, явка 62,07%. Один з найбільших розривів у 2-х турах в історії незалежної України."
+    description_en: "73.22% vs Poroshenko's 24.45%, turnout 62.07%. One of the largest 2nd-round margins in independent Ukraine's history."
+    source_url: "https://www.cvk.gov.ua/pls/vp2019/wp300pt001f01=720.html"
+    source_title: "ЦВК України — підсумки 2-го туру 21 квітня 2019"
+    impact: positive
+
+  - id: zelensky-2019-osce-assessment
+    date: "2019-04-22"
+    actor: zelensky
+    axis: A
+    type: election
+    title_uk: "Оцінка ОБСЄ/ОДІПЛ: вибори 'конкурентні, з повагою до фундаментальних свобод'"
+    title_en: "OSCE/ODIHR assessment: elections 'competitive, with respect for fundamental freedoms'"
+    description_uk: "Місія міжнародних спостерігачів ОБСЄ/ОДІПЛ, ПАРЄ, ПА ОБСЄ та ПА НАТО опублікувала заяву зі попередніми висновками: вибори були 'конкурентними і кандидати могли вільно вести кампанію'."
+    description_en: "OSCE/ODIHR, PACE, OSCE PA and NATO PA international observers issued a statement of preliminary findings: elections were 'competitive and candidates could campaign freely'."
+    source_url: "https://www.osce.org/odihr/elections/ukraine"
+    source_title: "OSCE/ODIHR Election Observation — Ukraine (вхідна сторінка з посиланнями на місії)"
+    impact: positive
+
+  - id: zelensky-2019-inauguration
+    date: "2019-05-20"
+    actor: zelensky
+    axis: A
+    type: other
+    title_uk: "Інавгурація як 6-го Президента України"
+    title_en: "Inauguration as 6th President of Ukraine"
+    description_uk: "Складено присягу президента відповідно до ст. 104 Конституції України. Початок 5-річного терміну."
+    description_en: "Took the presidential oath under Article 104 of the Constitution of Ukraine. Start of the 5-year term."
+    source_url: "https://www.president.gov.ua/news/inavguracijna-promova-prezidenta-ukrayini-volodimira-zelensk-55489"
+    source_title: "Офіційне інтернет-представництво Президента України"
+    impact: positive
+
+  - id: zelensky-2022-martial-law-imposed
+    date: "2022-02-24"
+    actor: zelensky
+    axis: A
+    type: other
+    title_uk: "Введення воєнного стану Указом №64/2022"
+    title_en: "Martial law imposed by Decree No. 64/2022"
+    description_uk: "Указ Президента №64/2022 запровадив воєнний стан в Україні у зв'язку з повномасштабним вторгненням РФ. Затверджено ВРУ того ж дня (Закон №2102-IX)."
+    description_en: "Presidential Decree No. 64/2022 introduced martial law in Ukraine due to the Russian full-scale invasion. Approved by the Verkhovna Rada the same day (Law No. 2102-IX)."
+    source_url: "https://zakon.rada.gov.ua/laws/show/64/2022"
+    source_title: "Законодавство України — Указ Президента №64/2022"
+    impact: neutral
+
+  - id: zelensky-2024-no-election
+    date: "2024-05-20"
+    actor: zelensky
+    axis: A
+    type: other
+    title_uk: "Закінчення 5-річного терміну; вибори не проводяться через воєнний стан"
+    title_en: "End of 5-year term; elections not held due to martial law"
+    description_uk: "Передбачена Конституцією дата завершення терміну. Ст. 19 ЗУ 'Про правовий режим воєнного стану' (№389-VIII) забороняє проведення президентських виборів під час воєнного стану. Ст. 83 Конституції передбачає продовження повноважень ВРУ до набуття повноважень нового складу."
+    description_en: "Constitutionally scheduled end of term. Article 19 of the Law 'On the Legal Regime of Martial Law' (No. 389-VIII) prohibits presidential elections during martial law. Article 83 of the Constitution provides for continuation of Verkhovna Rada powers."
+    source_url: "https://zakon.rada.gov.ua/laws/show/389-19"
+    source_title: "Закон України 'Про правовий режим воєнного стану' №389-VIII"
+    impact: negative
+
+  - id: zelensky-2024-venice-commission
+    date: "2024-03-15"
+    actor: zelensky
+    axis: A
+    type: other
+    title_uk: "Венеціанська комісія: проведення виборів під час воєнного стану 'не є можливим'"
+    title_en: "Venice Commission: holding elections during martial law 'is not possible'"
+    description_uk: "Венеціанська комісія Ради Європи у висновку CDL-AD(2024)003 підтвердила, що за чинного українського законодавства проведення виборів під час воєнного стану є юридично неможливим, і що це відповідає міжнародним стандартам у умовах активного збройного конфлікту."
+    description_en: "Venice Commission of the Council of Europe in opinion CDL-AD(2024)003 confirmed that under current Ukrainian law, holding elections during martial law is legally impossible, and that this conforms to international standards in active armed conflict."
+    source_url: "https://www.venice.coe.int/webforms/documents/default.aspx?pdffile=CDL-AD(2024)003-e"
+    source_title: "Venice Commission Opinion CDL-AD(2024)003 (PDF)"
+    impact: positive
+
+# ============================================================
+# ВІСЬ A — ЮРИДИЧНО-ЕЛЕКТОРАЛЬНА. PUTIN
+# ============================================================
+
+  - id: putin-2000-election
+    date: "2000-03-26"
+    actor: putin
+    axis: A
+    type: election
+    title_uk: "Перші президентські вибори — 52,94% у 1-му турі"
+    title_en: "First presidential election — 52.94% in 1st round"
+    description_uk: "В.В. Путін переміг у 1-му турі з 52,94%. ОБСЄ/ОДІПЛ відзначило 'значну невідповідність' між виборцями і реальною конкуренцією через 'упередженість ЗМІ'."
+    description_en: "V.V. Putin won the 1st round with 52.94%. OSCE/ODIHR noted 'significant disparities' between voters and real competition due to 'media bias'."
+    source_url: "https://www.osce.org/odihr/elections/russia"
+    source_title: "OSCE/ODIHR Election Observation — Russia (вхідна)"
+    impact: positive
+
+  - id: putin-2008-medvedev-tandem
+    date: "2008-05-07"
+    actor: putin
+    axis: A
+    type: other
+    title_uk: "Перехід на посаду прем'єр-міністра (тандем з Д. Медведєвим)"
+    title_en: "Transition to Prime Minister role (tandem with D. Medvedev)"
+    description_uk: "Після двох конституційних термінів (2000-2008) — перехід на посаду прем'єра. Конституція тоді обмежувала двома послідовними термінами. Опозиція і експерти кваліфікували це як 'обхід духу обмеження'."
+    description_en: "After two constitutional terms (2000-2008), transition to PM role. The Constitution then limited two consecutive terms. Opposition and experts qualified this as 'circumvention of the spirit of the term limit'."
+    source_url: "https://en.wikipedia.org/wiki/Vladimir_Putin#Prime_Minister_again_(2008%E2%80%932012)"
+    source_title: "Wikipedia — Vladimir Putin (хронологія повернень)"
+    impact: neutral
+
+  - id: putin-2012-return
+    date: "2012-03-04"
+    actor: putin
+    axis: A
+    type: election
+    title_uk: "Повернення в президенти — 63,60%, масові протести у Москві"
+    title_en: "Return to presidency — 63.60%, mass protests in Moscow"
+    description_uk: "Перемога з 63,60%. Опозиційні протести 'За чесні вибори' тривали з грудня 2011 (після думських виборів) до середини 2012. ОБСЄ/ОДІПЛ: 'вибори були чітко перекошені на користь одного кандидата'."
+    description_en: "Won with 63.60%. 'For Fair Elections' opposition protests ran from December 2011 (after Duma elections) until mid-2012. OSCE/ODIHR: 'elections were clearly skewed in favour of one candidate'."
+    source_url: "https://www.osce.org/odihr/elections/russia"
+    source_title: "OSCE/ODIHR — Russian Federation Presidential Election March 2012"
+    impact: neutral
+
+  - id: putin-2018-election
+    date: "2018-03-18"
+    actor: putin
+    axis: A
+    type: election
+    title_uk: "4-й термін — 76,69%; голосування на анексованому Криму (з 2014)"
+    title_en: "4th term — 76.69%; voting on annexed Crimea (since 2014)"
+    description_uk: "Перемога з 76,69%. Вибори проводилися на території анексованого Криму, що не визнано міжнародним правом. Україна не визнала результати голосування на ТОТ. Опозиційного кандидата О. Навального не допустили (засудження зняте лише після інциденту)."
+    description_en: "Won with 76.69%. Held on annexed Crimea, not recognised under international law. Ukraine did not recognise voting on its temporarily occupied territories. Opposition candidate A. Navalny was barred (conviction not vacated)."
+    source_url: "https://www.osce.org/odihr/elections/383577"
+    source_title: "OSCE/ODIHR — Russian Federation Presidential Election March 2018 (Final Report)"
+    impact: negative
+
+  - id: putin-2020-constitutional-reset
+    date: "2020-07-01"
+    actor: putin
+    axis: A
+    type: other
+    title_uk: "'Обнулення' — поправки до Конституції РФ, скидання лічильника термінів"
+    title_en: "'Resetting the clock' — Russian constitutional amendments resetting term counter"
+    description_uk: "Загальноросійське голосування за поправки до Конституції. Поправка В. Терешкової обнулила попередні президентські терміни Путіна, дозволивши йому балотуватися ще двічі (до 2036). Венеціанська комісія у висновку CDL-AD(2021)005 розкритикувала процедуру і зміст."
+    description_en: "Russia-wide vote on constitutional amendments. The V. Tereshkova amendment reset Putin's previous presidential terms, allowing him to run twice more (until 2036). Venice Commission opinion CDL-AD(2021)005 criticised both procedure and content."
+    source_url: "https://www.venice.coe.int/webforms/documents/default.aspx?pdffile=CDL-AD(2021)005-e"
+    source_title: "Venice Commission Opinion CDL-AD(2021)005"
+    impact: negative
+
+  - id: putin-2022-annexation-claim
+    date: "2022-09-30"
+    actor: putin
+    axis: A
+    type: territorial
+    title_uk: "Заява про 'анексію' 4 областей України, що не визнана міжнародно"
+    title_en: "Claimed 'annexation' of 4 Ukrainian oblasts, internationally not recognised"
+    description_uk: "Підписання РФ 'договорів про прийняття' Донецької, Луганської, Запорізької, Херсонської областей. Резолюція ГА ООН ES-11/4 (12.10.2022, 143 'за') засудила і визнала анексію недійсною."
+    description_en: "Russia signed 'accession treaties' for Donetsk, Luhansk, Zaporizhzhia, Kherson oblasts. UNGA Resolution ES-11/4 (12.10.2022, 143 in favour) condemned and declared the annexation void."
+    source_url: "https://digitallibrary.un.org/record/3990341"
+    source_title: "UN Digital Library — UNGA Resolution ES-11/4"
+    impact: negative
+
+  - id: putin-2024-election-occupied-territories
+    date: "2024-03-17"
+    actor: putin
+    axis: A
+    type: election
+    title_uk: "5-й термін — 87,28%; голосування на ТОТ України; без міжнародних спостерігачів"
+    title_en: "5th term — 87.28%; voting on Ukraine's TOT; no international observers"
+    description_uk: "ЦВК РФ оголосила 87,28% за Путіна. Голосування проводилось на тимчасово окупованих територіях України (Крим, частини Донецької, Луганської, Запорізької, Херсонської областей). ОБСЄ/ОДІПЛ не спостерігала через 'обмеження для забезпечення кредибельної місії'. Україна, ЄС, G7 не визнали виборів на ТОТ."
+    description_en: "Russian CEC announced 87.28% for Putin. Voting took place on Ukraine's temporarily occupied territories (Crimea, parts of Donetsk, Luhansk, Zaporizhzhia, Kherson oblasts). OSCE/ODIHR did not observe due to 'restrictions preventing a credible mission'. Ukraine, EU, G7 did not recognise voting on the TOT."
+    source_url: "https://www.osce.org/odihr/elections/russia"
+    source_title: "OSCE/ODIHR — Election Observation Russian Federation (категорійна сторінка зі звітами місій)"
+    impact: negative
+
+  - id: putin-2024-opposition-excluded
+    date: "2024-02-08"
+    actor: putin
+    axis: A
+    type: election
+    title_uk: "Відмова в реєстрації Б. Надєждіна — антивоєнного кандидата"
+    title_en: "Refusal to register B. Nadezhdin — anti-war candidate"
+    description_uk: "ЦВК РФ відмовила в реєстрації антивоєнному кандидату Б. Надєждіну через '15,4% недійсних підписів'. Раніше, у лютому 2024 у в'язниці помер О. Навальний — головний опозиціонер, якого до виборів не допустили з 2018."
+    description_en: "Russia's CEC refused to register anti-war candidate B. Nadezhdin over '15.4% invalid signatures'. Earlier, in February 2024, A. Navalny — the main opposition figure, barred from elections since 2018 — died in prison."
+    source_url: "https://www.ohchr.org/en/press-releases/2024/03/russian-federation-un-experts-criticise-conduct-and-context-presidential"
+    source_title: "OHCHR — UN experts on 2024 Russian presidential election"
+    impact: negative
+
+# ============================================================
+# ВІСЬ B — МІЖНАРОДНЕ ВИЗНАННЯ. ZELENSKY
+# ============================================================
+
+  - id: zelensky-2022-unga-resolution-es111
+    date: "2022-03-02"
+    actor: zelensky
+    axis: B
+    type: resolution
+    title_uk: "Резолюція ГА ООН ES-11/1 — 141 'за', 5 'проти', 35 утрималися"
+    title_en: "UNGA Resolution ES-11/1 — 141 in favour, 5 against, 35 abstentions"
+    description_uk: "Надзвичайна спецсесія ГА ООН ухвалила резолюцію 'Aggression against Ukraine' з вимогою негайно припинити агресію РФ. Серед 5 'проти': РФ, Білорусь, КНДР, Сирія, Еритрея."
+    description_en: "UNGA Emergency Special Session adopted resolution 'Aggression against Ukraine' demanding immediate cessation of Russian aggression. The 5 against: Russia, Belarus, DPRK, Syria, Eritrea."
+    source_url: "https://digitallibrary.un.org/record/3965290"
+    source_title: "UN Digital Library — UNGA Resolution ES-11/1"
+    impact: positive
+
+  - id: zelensky-2022-us-congress-address
+    date: "2022-03-16"
+    actor: zelensky
+    axis: B
+    type: other
+    title_uk: "Виступ у Конгресі США (відеозвернення)"
+    title_en: "Address to US Congress (video link)"
+    description_uk: "Перший за історію відеозвернення українського президента до спільного засідання обох палат Конгресу США. Подальше пакетне ухвалення допомоги ($13,6 млрд у березні; $40 млрд у травні 2022)."
+    description_en: "First-ever video address by a Ukrainian president to a joint session of both chambers of the US Congress. Followed by aid packages ($13.6B in March; $40B in May 2022)."
+    source_url: "https://www.congress.gov/event/117th-congress/joint-event/LC68891"
+    source_title: "Congress.gov — Joint Meeting Address by President Zelensky"
+    impact: positive
+
+  - id: zelensky-2023-g7-hiroshima
+    date: "2023-05-21"
+    actor: zelensky
+    axis: B
+    type: communique
+    title_uk: "Участь у саміті G7 (Хіросіма) — комюніке з 'непохитною підтримкою'"
+    title_en: "Participation at G7 Summit (Hiroshima) — communique with 'unwavering support'"
+    description_uk: "Особистий приліт на саміт G7. Лідери G7 оприлюднили заяву з підтвердженням 'непохитної підтримки України стільки, скільки буде потрібно' (as long as it takes)."
+    description_en: "In-person attendance at G7. Leaders issued a statement reaffirming 'unwavering support for Ukraine for as long as it takes'."
+    source_url: "https://www.g7germany.de/g7-en"
+    source_title: "G7 Presidency archive (на сторінці голів — посилання на Хіросіма 2023 і інші саміти)"
+    impact: positive
+
+  - id: zelensky-2024-bilateral-security-agreements
+    date: "2024-02-16"
+    actor: zelensky
+    axis: B
+    type: other
+    title_uk: "10-річні двосторонні безпекові угоди з G7 (Франція, Німеччина, інші)"
+    title_en: "10-year bilateral security agreements with G7 (France, Germany, others)"
+    description_uk: "Підписання серії 10-річних двосторонніх безпекових угод з державами G7 у рамках Спільної декларації підтримки України, прийнятої на саміті НАТО у Вільнюсі (2023-07-12). Станом на сер. 2024 — понад 20 угод."
+    description_en: "Series of 10-year bilateral security agreements with G7 states under the Joint Declaration of Support for Ukraine adopted at NATO Vilnius Summit (12.07.2023). As of mid-2024 — over 20 agreements signed."
+    source_url: "https://www.nato.int/cps/en/natohq/topics_192648.htm"
+    source_title: "NATO — Relations with Ukraine (включно з Joint Declaration of Support, Vilnius 2023)"
+    impact: positive
+
+  - id: zelensky-2024-no-personal-sanctions
+    date: "2024-01-01"
+    actor: zelensky
+    axis: B
+    type: sanction
+    title_uk: "Відсутність персональних санкцій будь-якої держави-члена ООН"
+    title_en: "No personal sanctions by any UN member state"
+    description_uk: "Жодна з 193 держав-членів ООН не запровадила персональних санкцій проти В. Зеленського. Україна залишається членом ООН з 1945 і визнаним учасником міжнародних форумів."
+    description_en: "None of the 193 UN member states imposed personal sanctions against V. Zelensky. Ukraine remains a UN member since 1945 and a recognised participant in international fora."
+    source_url: "https://www.un.org/en/about-us/member-states"
+    source_title: "UN — Member States"
+    impact: positive
+
+# ============================================================
+# ВІСЬ B — МІЖНАРОДНЕ ВИЗНАННЯ. PUTIN
+# ============================================================
+
+  - id: putin-2022-eu-personal-sanctions
+    date: "2022-02-25"
+    actor: putin
+    axis: B
+    type: sanction
+    title_uk: "Персональні санкції ЄС проти В. Путіна (заморозка активів, заборона в'їзду)"
+    title_en: "EU personal sanctions against V. Putin (asset freeze, travel ban)"
+    description_uk: "Рада ЄС внесла В. Путіна і С. Лаврова до санкційного списку: заморозка активів у ЄС, заборона перебування на території держав ЄС. Аналогічні дії — США (OFAC, 25.02.2022), Велика Британія (15.03.2022), Канада, Австралія, Японія, Нова Зеландія."
+    description_en: "EU Council added V. Putin and S. Lavrov to its sanctions list: asset freeze in the EU, travel ban. Followed by US (OFAC, 25.02.2022), UK (15.03.2022), Canada, Australia, Japan, New Zealand."
+    source_url: "https://www.consilium.europa.eu/en/press/press-releases/2022/02/25/russia-eu-adopts-sanctions-against-president-putin-and-foreign-minister-lavrov/"
+    source_title: "Council of the EU — sanctions against Putin and Lavrov"
+    impact: negative
+
+  - id: putin-2022-coe-expulsion
+    date: "2022-03-16"
+    actor: putin
+    axis: B
+    type: decision
+    title_uk: "Виключення РФ з Ради Європи"
+    title_en: "Expulsion of Russia from the Council of Europe"
+    description_uk: "Комітет міністрів РЄ ухвалив рішення про припинення членства РФ — вперше в історії організації. Раніше (15.03.2022) ПАРЄ ухвалила резолюцію з рекомендацією виключити. РФ з 17.09.2022 перестала бути учасницею ЄСПЛ."
+    description_en: "CoE Committee of Ministers decided to terminate Russia's membership — a first in the organization's history. Earlier (15.03.2022), PACE adopted a resolution recommending expulsion. Russia ceased to be a party to the ECHR from 17.09.2022."
+    source_url: "https://www.coe.int/en/web/portal/-/the-russian-federation-is-excluded-from-the-council-of-europe"
+    source_title: "CoE — Russian Federation excluded from the Council of Europe"
+    impact: negative
+
+  - id: putin-2022-unga-hrc-suspension
+    date: "2022-04-07"
+    actor: putin
+    axis: B
+    type: resolution
+    title_uk: "Призупинення членства РФ у Раді з прав людини ООН"
+    title_en: "Suspension of Russia's membership in UN Human Rights Council"
+    description_uk: "Резолюція ГА ООН A/RES/ES-11/3 призупинила членство РФ у РПЛ ООН: 93 'за', 24 'проти', 58 утрималися. Підстава — звинувачення у вбивствах цивільних у Бучі."
+    description_en: "UNGA Resolution A/RES/ES-11/3 suspended Russia's UNHRC membership: 93 in favour, 24 against, 58 abstentions. Grounds — allegations of killings of civilians in Bucha."
+    source_url: "https://digitallibrary.un.org/record/3967778"
+    source_title: "UN Digital Library — UNGA Resolution ES-11/3"
+    impact: negative
+
+  - id: putin-2023-icc-warrant
+    date: "2023-03-17"
+    actor: putin
+    axis: B
+    type: warrant
+    title_uk: "Ордер на арешт ICC за незаконне вивезення дітей з України"
+    title_en: "ICC arrest warrant for unlawful deportation of children from Ukraine"
+    description_uk: "Міжнародний кримінальний суд видав ордер на арешт В. Путіна та М. Львової-Бєлової за воєнний злочин незаконного вивезення дітей з ТОТ України в РФ (ст. 8(2)(a)(vii) і 8(2)(b)(viii) Римського статуту). Понад 20 тис. дітей за оцінками Child War."
+    description_en: "ICC issued arrest warrants for V. Putin and M. Lvova-Belova for the war crime of unlawful deportation of children from Ukraine's TOT to Russia (Art. 8(2)(a)(vii) and 8(2)(b)(viii) of the Rome Statute). Over 20,000 children per Child War estimates."
+    source_url: "https://www.icc-cpi.int/news/situation-ukraine-icc-judges-issue-arrest-warrants-against-vladimir-vladimirovich-putin-and"
+    source_title: "ICC — Press release on Putin arrest warrant"
+    impact: negative
+
+  - id: putin-2023-g20-skipped
+    date: "2023-09-09"
+    actor: putin
+    axis: B
+    type: other
+    title_uk: "Пропуск саміту G20 у Делі — лідер не присутній"
+    title_en: "Skipped G20 Summit in New Delhi — leader absent"
+    description_uk: "В. Путін не приїхав на саміт G20 у Делі. Це другий поспіль пропущений саміт G20 (попередній — у Балі 2022). У 2024 (Ріо) і 2025 (ПАР) також представлений С. Лавровим, не президентом."
+    description_en: "V. Putin did not attend the G20 Summit in New Delhi. It is the second consecutive G20 he skipped (previous — Bali 2022). In 2024 (Rio) and 2025 (South Africa) also represented by S. Lavrov, not the president."
+    source_url: "https://www.g20.org/"
+    source_title: "G20 official site (хост-ротація; архів самітів)"
+    impact: negative
+
+  - id: putin-2024-icc-shoigu-gerasimov
+    date: "2024-06-25"
+    actor: putin
+    axis: B
+    type: warrant
+    title_uk: "Ордери ICC на С. Шойгу і В. Герасимова за атаки на енергетику України"
+    title_en: "ICC arrest warrants for S. Shoigu and V. Gerasimov over attacks on Ukraine's energy infrastructure"
+    description_uk: "Ордери ICC проти екс-міністра оборони С. Шойгу і начальника Генштабу В. Герасимова за воєнні злочини скеровування атак проти цивільних об'єктів і непропорційну шкоду цивільному населенню (атаки на електромережу України, жовтень 2022 — березень 2023)."
+    description_en: "ICC arrest warrants for former defence minister S. Shoigu and Chief of General Staff V. Gerasimov for war crimes of directing attacks at civilian objects and inflicting excessive incidental harm to civilians (attacks on Ukraine's power grid, Oct 2022 – Mar 2023)."
+    source_url: "https://www.icc-cpi.int/news?search=shoigu"
+    source_title: "ICC News — пресрелізи по справі Шойгу/Герасимова"
+    impact: negative
+
+  - id: putin-2023-mongolia-non-arrest
+    date: "2024-09-03"
+    actor: putin
+    axis: B
+    type: other
+    title_uk: "Візит до Монголії — країна-учасниця Римського статуту не виконала ордер ICC"
+    title_en: "Visit to Mongolia — a Rome Statute state party failed to enforce the ICC warrant"
+    description_uk: "Перший виїзд Путіна в державу-учасницю Римського статуту після ордеру 2023. Монголія не виконала зобов'язання заарештувати. ICC передала справу до Асамблеї держав-учасниць. ЄС, Україна засудили."
+    description_en: "Putin's first travel to a Rome Statute state party after the 2023 warrant. Mongolia did not fulfill its obligation to arrest. ICC referred non-compliance to the Assembly of States Parties. EU, Ukraine condemned."
+    source_url: "https://asp.icc-cpi.int/"
+    source_title: "ICC Assembly of States Parties — official site (документи по non-cooperation Mongolia в архіві ASP)"
+    impact: neutral

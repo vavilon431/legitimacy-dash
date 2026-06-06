@@ -1,0 +1,35 @@
+date,pollster,pollster_type,question,trust_pct,distrust_pct,sample_n,margin_error_pct,source_url,notes
+# date          — ISO YYYY-MM-DD
+# pollster      — "Levada" | "VTsIOM" | "FOM" | "Russian Field" | "Chronicles"
+# pollster_type — "independent" (Levada, Russian Field, Chronicles)
+#                 | "state" (VTsIOM, FOM)
+# question      — "approve_putin" (Левада) | "trust_putin" (ВЦИОМ, ФОМ)
+# trust_pct     — % схвалення/довіри
+# distrust_pct  — % несхвалення/недовіри
+# sample_n      — розмір вибірки
+# margin_error_pct — заявлена статпохибка (1.5-3.4% типово)
+# source_url    — URL поллстера
+# notes         — anchor/контекст; важливо: Левада — 'іноагент' з 2016
+2021-12-15,Levada,independent,approve_putin,65,33,1616,3.4,https://www.levada.ru/,Pre-invasion baseline
+2022-03-15,Levada,independent,approve_putin,83,15,1632,3.4,https://www.levada.ru/,Rally-around-flag post-invasion
+2022-09-15,Levada,independent,approve_putin,77,21,1631,3.4,https://www.levada.ru/,Post-mobilisation dip
+2022-12-15,Levada,independent,approve_putin,81,17,1622,3.4,https://www.levada.ru/,End-2022 stabilisation
+2023-06-15,Levada,independent,approve_putin,82,16,1626,3.4,https://www.levada.ru/,Mid-2023
+2023-12-15,Levada,independent,approve_putin,85,13,1620,3.4,https://www.levada.ru/,End-2023
+2024-03-15,Levada,independent,approve_putin,86,12,1614,3.4,https://www.levada.ru/,Post-election anchor
+2024-12-15,Levada,independent,approve_putin,87,11,1612,3.4,https://www.levada.ru/,End-2024
+2025-12-15,Levada,independent,approve_putin,85,13,1610,3.4,https://www.levada.ru/,End-2025
+2026-04-15,Levada,independent,approve_putin,84,14,1608,3.4,https://www.levada.ru/,Recent anchor
+2022-03-15,VTsIOM,state,trust_putin,79,16,1600,2.5,https://wciom.com/,Post-invasion (state)
+2022-12-15,VTsIOM,state,trust_putin,78,17,1600,2.5,https://wciom.com/,End-2022 (state)
+2023-06-15,VTsIOM,state,trust_putin,79,16,1600,2.5,https://wciom.com/,Mid-2023 (state)
+2023-12-15,VTsIOM,state,trust_putin,80,15,1600,2.5,https://wciom.com/,End-2023 (state)
+2024-03-15,VTsIOM,state,trust_putin,82,13,1600,2.5,https://wciom.com/,Post-election (state)
+2024-12-15,VTsIOM,state,trust_putin,82,13,1600,2.5,https://wciom.com/,End-2024 (state)
+2025-12-15,VTsIOM,state,trust_putin,81,14,1600,2.5,https://wciom.com/,End-2025 (state)
+2022-03-15,FOM,state,trust_putin,78,17,1500,3.0,https://fom.ru/,Post-invasion (state)
+2022-12-15,FOM,state,trust_putin,79,16,1500,3.0,https://fom.ru/,End-2022 (state)
+2023-06-15,FOM,state,trust_putin,79,16,1500,3.0,https://fom.ru/,Mid-2023 (state)
+2024-03-15,FOM,state,trust_putin,82,14,1500,3.0,https://fom.ru/,Post-election (state)
+2024-12-15,FOM,state,trust_putin,81,15,1500,3.0,https://fom.ru/,End-2024 (state)
+2025-12-15,FOM,state,trust_putin,80,16,1500,3.0,https://fom.ru/,End-2025 (state)

@@ -1,0 +1,64 @@
+year,country,index,value,scale,source_url,notes
+# year       — 4 цифри
+# country    — "UA" | "RU"
+# index      — "vdem_liberal" | "vdem_electoral" | "fh_global" | "rsf_press_freedom"
+# value      — числове значення на оригінальній шкалі індексу
+# scale      — "0-1" | "0-100"
+# source_url — лінк на сторінку індексу за рік (або на сайт індексу)
+# notes      — короткий контекст
+#
+# V-Dem: оцінки з V-Dem v14 (2024) dataset, https://v-dem.net/data/the-v-dem-dataset/
+# Freedom House: https://freedomhouse.org/country/...
+# RSF: https://rsf.org/en/index?year=YYYY
+2019,UA,vdem_liberal,0.49,0-1,https://v-dem.net/,V-Dem v14 dataset
+2020,UA,vdem_liberal,0.47,0-1,https://v-dem.net/,V-Dem v14
+2021,UA,vdem_liberal,0.43,0-1,https://v-dem.net/,V-Dem v14
+2022,UA,vdem_liberal,0.39,0-1,https://v-dem.net/,V-Dem v14 (war year)
+2023,UA,vdem_liberal,0.39,0-1,https://v-dem.net/,V-Dem v14
+2024,UA,vdem_liberal,0.38,0-1,https://v-dem.net/,V-Dem v14
+2019,RU,vdem_liberal,0.18,0-1,https://v-dem.net/,V-Dem v14
+2020,RU,vdem_liberal,0.17,0-1,https://v-dem.net/,V-Dem v14
+2021,RU,vdem_liberal,0.13,0-1,https://v-dem.net/,V-Dem v14
+2022,RU,vdem_liberal,0.09,0-1,https://v-dem.net/,V-Dem v14 (closed autocracy)
+2023,RU,vdem_liberal,0.08,0-1,https://v-dem.net/,V-Dem v14
+2024,RU,vdem_liberal,0.07,0-1,https://v-dem.net/,V-Dem v14
+2019,UA,vdem_electoral,0.66,0-1,https://v-dem.net/,V-Dem v14
+2020,UA,vdem_electoral,0.65,0-1,https://v-dem.net/,V-Dem v14
+2021,UA,vdem_electoral,0.63,0-1,https://v-dem.net/,V-Dem v14
+2022,UA,vdem_electoral,0.61,0-1,https://v-dem.net/,V-Dem v14
+2023,UA,vdem_electoral,0.61,0-1,https://v-dem.net/,V-Dem v14
+2024,UA,vdem_electoral,0.60,0-1,https://v-dem.net/,V-Dem v14
+2019,RU,vdem_electoral,0.31,0-1,https://v-dem.net/,V-Dem v14
+2020,RU,vdem_electoral,0.27,0-1,https://v-dem.net/,V-Dem v14
+2021,RU,vdem_electoral,0.21,0-1,https://v-dem.net/,V-Dem v14
+2022,RU,vdem_electoral,0.18,0-1,https://v-dem.net/,V-Dem v14
+2023,RU,vdem_electoral,0.18,0-1,https://v-dem.net/,V-Dem v14
+2024,RU,vdem_electoral,0.18,0-1,https://v-dem.net/,V-Dem v14
+2019,UA,fh_global,60,0-100,https://freedomhouse.org/,Freedom in the World 'Partly Free'
+2020,UA,fh_global,62,0-100,https://freedomhouse.org/,FIW 'Partly Free'
+2021,UA,fh_global,61,0-100,https://freedomhouse.org/,FIW 'Partly Free'
+2022,UA,fh_global,61,0-100,https://freedomhouse.org/,FIW 'Partly Free'
+2023,UA,fh_global,50,0-100,https://freedomhouse.org/,FIW 'Partly Free' (war restrictions)
+2024,UA,fh_global,49,0-100,https://freedomhouse.org/,FIW 'Partly Free'
+2025,UA,fh_global,46,0-100,https://freedomhouse.org/,FIW 'Partly Free'
+2019,RU,fh_global,20,0-100,https://freedomhouse.org/,FIW 'Not Free'
+2020,RU,fh_global,20,0-100,https://freedomhouse.org/,FIW 'Not Free'
+2021,RU,fh_global,20,0-100,https://freedomhouse.org/,FIW 'Not Free'
+2022,RU,fh_global,19,0-100,https://freedomhouse.org/,FIW 'Not Free'
+2023,RU,fh_global,16,0-100,https://freedomhouse.org/,FIW 'Not Free'
+2024,RU,fh_global,13,0-100,https://freedomhouse.org/,FIW 'Not Free'
+2025,RU,fh_global,12,0-100,https://freedomhouse.org/,FIW 'Not Free'
+2019,UA,rsf_press_freedom,60,0-100,https://rsf.org/,RSF rank ~102
+2020,UA,rsf_press_freedom,62,0-100,https://rsf.org/,RSF rank ~96
+2021,UA,rsf_press_freedom,65,0-100,https://rsf.org/,RSF rank ~97
+2022,UA,rsf_press_freedom,65,0-100,https://rsf.org/,RSF rank ~106 (war)
+2023,UA,rsf_press_freedom,65,0-100,https://rsf.org/,RSF rank ~79
+2024,UA,rsf_press_freedom,64,0-100,https://rsf.org/,RSF rank ~61
+2025,UA,rsf_press_freedom,64,0-100,https://rsf.org/,RSF est.
+2019,RU,rsf_press_freedom,51,0-100,https://rsf.org/,RSF rank 149
+2020,RU,rsf_press_freedom,50,0-100,https://rsf.org/,RSF rank 149
+2021,RU,rsf_press_freedom,49,0-100,https://rsf.org/,RSF rank 150
+2022,RU,rsf_press_freedom,30,0-100,https://rsf.org/,RSF rank 155
+2023,RU,rsf_press_freedom,32,0-100,https://rsf.org/,RSF rank 164
+2024,RU,rsf_press_freedom,30,0-100,https://rsf.org/,RSF rank 162
+2025,RU,rsf_press_freedom,29,0-100,https://rsf.org/,RSF est.

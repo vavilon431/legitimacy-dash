@@ -1,0 +1,36 @@
+date,pollster,pollster_type,question,trust_pct,distrust_pct,sample_n,margin_error_pct,source_url,notes
+# date          — ISO YYYY-MM-DD (медіана польового періоду)
+# pollster      — "KIIS" | "Razumkov" | "Rating" | "Info Sapiens" | "SOCIS"
+# pollster_type — "independent" (немає аналога "state" в UA)
+# question      — short tag: "trust_president" | "approve_actions" | "trust_zelensky"
+# trust_pct     — % довіри (сума "повністю довіряю" + "скоріше довіряю")
+# distrust_pct  — % недовіри ("скоріше не довіряю" + "повністю не довіряю")
+# sample_n      — розмір вибірки
+# margin_error_pct — заявлена статпохибка
+# source_url    — URL поллстера (для конкретних PDF — оновлюватимемо)
+# notes         — короткий контекст (anchor, метод)
+#
+# Анкори: добре оприлюднені результати, що багаторазово цитувались у медіа і
+# звітах. Точні значення можуть відрізнятись на 1-3 п.п. залежно від
+# формулювання питання.
+2021-12-15,KIIS,independent,trust_zelensky,27,52,2000,2.4,https://www.kiis.com.ua/,Anchor: pre-invasion baseline
+2022-05-13,KIIS,independent,trust_zelensky,90,7,2007,2.4,https://www.kiis.com.ua/,Anchor: rally-around-flag peak
+2022-12-15,KIIS,independent,trust_zelensky,84,12,2001,2.4,https://www.kiis.com.ua/,Anchor: post-Kherson liberation
+2023-05-15,KIIS,independent,trust_zelensky,78,18,2014,2.4,https://www.kiis.com.ua/,Anchor: pre-counteroffensive
+2023-12-15,KIIS,independent,trust_zelensky,62,33,2007,2.4,https://www.kiis.com.ua/,Anchor: post-counteroffensive
+2024-05-20,KIIS,independent,trust_zelensky,59,38,2000,2.4,https://www.kiis.com.ua/,Term-end + Avdiivka loss
+2024-09-15,KIIS,independent,trust_zelensky,60,37,2000,2.4,https://www.kiis.com.ua/,Anchor: Kursk operation
+2025-02-15,KIIS,independent,trust_zelensky,57,40,2000,2.4,https://www.kiis.com.ua/,Anchor: 3rd year of invasion
+2025-12-15,KIIS,independent,trust_zelensky,58,40,2000,2.4,https://www.kiis.com.ua/,Late-2025 anchor
+2026-04-15,KIIS,independent,trust_zelensky,57,41,2000,2.4,https://www.kiis.com.ua/,Recent anchor
+2021-12-15,Razumkov,independent,trust_president,33,55,2018,2.3,https://razumkov.org.ua/,Quarterly survey
+2022-12-15,Razumkov,independent,trust_president,80,15,2018,2.3,https://razumkov.org.ua/,Mid-war anchor
+2023-06-15,Razumkov,independent,trust_president,67,28,2018,2.3,https://razumkov.org.ua/,Mid-2023 anchor
+2024-03-15,Razumkov,independent,trust_president,60,35,2018,2.3,https://razumkov.org.ua/,Pre-Avdiivka anchor
+2024-12-15,Razumkov,independent,trust_president,58,38,2018,2.3,https://razumkov.org.ua/,End-of-2024 anchor
+2025-09-15,Razumkov,independent,trust_president,55,42,2018,2.3,https://razumkov.org.ua/,Mid-2025 anchor
+2022-03-15,Rating,independent,trust_zelensky,91,6,1200,2.8,https://ratinggroup.ua/,Anchor: peak post-invasion
+2022-12-15,Rating,independent,trust_zelensky,82,14,1200,2.8,https://ratinggroup.ua/,End-2022
+2023-06-15,Rating,independent,trust_zelensky,74,22,1200,2.8,https://ratinggroup.ua/,Mid-2023
+2024-06-15,Rating,independent,trust_zelensky,63,33,1200,2.8,https://ratinggroup.ua/,Term-end anchor
+2025-06-15,Rating,independent,trust_zelensky,60,37,1200,2.8,https://ratinggroup.ua/,Mid-2025 anchor

@@ -1,0 +1,549 @@
+# country_status.yaml — позиція кожної держави щодо ключових індикаторів
+# міжнародного визнання осі B.
+#
+# Принцип: default = "yes" по голосуваннях ES-11/1 і ES-11/4 (бо за резолюції
+# 141 і 143 держав відповідно). Тут перелічуємо ЛИШЕ країни з ВІДМІННИМ від
+# yes статусом + країни-санкційники проти Путіна особисто.
+#
+# Поля:
+#   iso3            — ISO 3166-1 alpha-3 (або ADM0_A3 для дискусійних).
+#   name_uk/en      — людська назва (для tooltip/sidebar).
+#   vote_es111      — "yes" | "abstain" | "no" | "absent" — UN GA, 2022-03-02.
+#                     Резолюція 'Aggression against Ukraine' (141:5:35, 12 absent).
+#   vote_es114      — "yes" | "abstain" | "no" | "absent" — UN GA, 2022-10-12.
+#                     Резолюція по невизнанню анексії (143:5:35, 10 absent).
+#   icc_rome_statute — true/false — учасник Римського статуту (юр. обов'язок
+#                      виконати ордер ICC проти Путіна).
+#   putin_personal_sanctions — true/false — персональні санкції проти В. Путіна.
+#
+# Джерела: digitallibrary.un.org (резолюції ES-11/1, ES-11/4),
+#          asp.icc-cpi.int (Rome Statute parties),
+#          національні sanctions trackers (OFAC, EU, OFSI, тощо).
+
+schema_version: 1
+
+countries:
+
+  # ========== 5 "NO" на ES-11/1 ==========
+
+  - iso3: RUS
+    name_uk: Російська Федерація
+    name_en: Russian Federation
+    vote_es111: "no"
+    vote_es114: "no"
+    icc_rome_statute: false
+    putin_personal_sanctions: false
+
+  - iso3: BLR
+    name_uk: Білорусь
+    name_en: Belarus
+    vote_es111: "no"
+    vote_es114: "no"
+    icc_rome_statute: false
+    putin_personal_sanctions: false
+
+  - iso3: PRK
+    name_uk: КНДР
+    name_en: DPRK (North Korea)
+    vote_es111: "no"
+    vote_es114: "no"
+    icc_rome_statute: false
+    putin_personal_sanctions: false
+
+  - iso3: SYR
+    name_uk: Сирія
+    name_en: Syria
+    vote_es111: "no"
+    vote_es114: "no"
+    icc_rome_statute: false
+    putin_personal_sanctions: false
+
+  - iso3: ERI
+    name_uk: Еритрея
+    name_en: Eritrea
+    vote_es111: "no"
+    vote_es114: "no"
+    icc_rome_statute: false
+    putin_personal_sanctions: false
+
+  # ========== Нікарагуа: yes→no на ES-11/4 ==========
+
+  - iso3: NIC
+    name_uk: Нікарагуа
+    name_en: Nicaragua
+    vote_es111: "abstain"
+    vote_es114: "no"
+    icc_rome_statute: false
+    putin_personal_sanctions: false
+
+  # ========== Ключові утримання (ES-11/1) ==========
+
+  - iso3: CHN
+    name_uk: Китай (КНР)
+    name_en: China (PRC)
+    vote_es111: "abstain"
+    vote_es114: "abstain"
+    icc_rome_statute: false
+    putin_personal_sanctions: false
+
+  - iso3: IND
+    name_uk: Індія
+    name_en: India
+    vote_es111: "abstain"
+    vote_es114: "abstain"
+    icc_rome_statute: false
+    putin_personal_sanctions: false
+
+  - iso3: IRN
+    name_uk: Іран
+    name_en: Iran
+    vote_es111: "abstain"
+    vote_es114: "no"
+    icc_rome_statute: false
+    putin_personal_sanctions: false
+
+  - iso3: PAK
+    name_uk: Пакистан
+    name_en: Pakistan
+    vote_es111: "abstain"
+    vote_es114: "abstain"
+    icc_rome_statute: false
+    putin_personal_sanctions: false
+
+  - iso3: BGD
+    name_uk: Бангладеш
+    name_en: Bangladesh
+    vote_es111: "abstain"
+    vote_es114: "abstain"
+    icc_rome_statute: true
+    putin_personal_sanctions: false
+
+  - iso3: LKA
+    name_uk: Шрі-Ланка
+    name_en: Sri Lanka
+    vote_es111: "abstain"
+    vote_es114: "abstain"
+    icc_rome_statute: false
+    putin_personal_sanctions: false
+
+  - iso3: VNM
+    name_uk: В'єтнам
+    name_en: Vietnam
+    vote_es111: "abstain"
+    vote_es114: "abstain"
+    icc_rome_statute: false
+    putin_personal_sanctions: false
+
+  - iso3: LAO
+    name_uk: Лаос
+    name_en: Laos
+    vote_es111: "abstain"
+    vote_es114: "abstain"
+    icc_rome_statute: false
+    putin_personal_sanctions: false
+
+  - iso3: MNG
+    name_uk: Монголія
+    name_en: Mongolia
+    vote_es111: "abstain"
+    vote_es114: "yes"
+    icc_rome_statute: true
+    putin_personal_sanctions: false
+
+  - iso3: KAZ
+    name_uk: Казахстан
+    name_en: Kazakhstan
+    vote_es111: "abstain"
+    vote_es114: "abstain"
+    icc_rome_statute: false
+    putin_personal_sanctions: false
+
+  - iso3: KGZ
+    name_uk: Киргизстан
+    name_en: Kyrgyzstan
+    vote_es111: "abstain"
+    vote_es114: "abstain"
+    icc_rome_statute: false
+    putin_personal_sanctions: false
+
+  - iso3: TJK
+    name_uk: Таджикистан
+    name_en: Tajikistan
+    vote_es111: "abstain"
+    vote_es114: "abstain"
+    icc_rome_statute: false
+    putin_personal_sanctions: false
+
+  - iso3: ARM
+    name_uk: Вірменія
+    name_en: Armenia
+    vote_es111: "abstain"
+    vote_es114: "abstain"
+    icc_rome_statute: true
+    putin_personal_sanctions: false
+
+  - iso3: CUB
+    name_uk: Куба
+    name_en: Cuba
+    vote_es111: "abstain"
+    vote_es114: "abstain"
+    icc_rome_statute: false
+    putin_personal_sanctions: false
+
+  - iso3: BOL
+    name_uk: Болівія
+    name_en: Bolivia
+    vote_es111: "abstain"
+    vote_es114: "abstain"
+    icc_rome_statute: true
+    putin_personal_sanctions: false
+
+  - iso3: SLV
+    name_uk: Сальвадор
+    name_en: El Salvador
+    vote_es111: "abstain"
+    vote_es114: "yes"
+    icc_rome_statute: false
+    putin_personal_sanctions: false
+
+  - iso3: DZA
+    name_uk: Алжир
+    name_en: Algeria
+    vote_es111: "abstain"
+    vote_es114: "abstain"
+    icc_rome_statute: false
+    putin_personal_sanctions: false
+
+  - iso3: AGO
+    name_uk: Ангола
+    name_en: Angola
+    vote_es111: "abstain"
+    vote_es114: "abstain"
+    icc_rome_statute: false
+    putin_personal_sanctions: false
+
+  - iso3: BDI
+    name_uk: Бурунді
+    name_en: Burundi
+    vote_es111: "abstain"
+    vote_es114: "abstain"
+    icc_rome_statute: false
+    putin_personal_sanctions: false
+
+  - iso3: CAF
+    name_uk: ЦАР
+    name_en: Central African Republic
+    vote_es111: "abstain"
+    vote_es114: "abstain"
+    icc_rome_statute: true
+    putin_personal_sanctions: false
+
+  - iso3: COG
+    name_uk: Конго (Браззавіль)
+    name_en: Republic of the Congo
+    vote_es111: "abstain"
+    vote_es114: "yes"
+    icc_rome_statute: true
+    putin_personal_sanctions: false
+
+  - iso3: GNQ
+    name_uk: Екваторіальна Гвінея
+    name_en: Equatorial Guinea
+    vote_es111: "abstain"
+    vote_es114: "abstain"
+    icc_rome_statute: false
+    putin_personal_sanctions: false
+
+  - iso3: MDG
+    name_uk: Мадагаскар
+    name_en: Madagascar
+    vote_es111: "abstain"
+    vote_es114: "abstain"
+    icc_rome_statute: false
+    putin_personal_sanctions: false
+
+  - iso3: MLI
+    name_uk: Малі
+    name_en: Mali
+    vote_es111: "abstain"
+    vote_es114: "abstain"
+    icc_rome_statute: true
+    putin_personal_sanctions: false
+
+  - iso3: MOZ
+    name_uk: Мозамбік
+    name_en: Mozambique
+    vote_es111: "abstain"
+    vote_es114: "abstain"
+    icc_rome_statute: false
+    putin_personal_sanctions: false
+
+  - iso3: NAM
+    name_uk: Намібія
+    name_en: Namibia
+    vote_es111: "abstain"
+    vote_es114: "abstain"
+    icc_rome_statute: true
+    putin_personal_sanctions: false
+
+  - iso3: SEN
+    name_uk: Сенегал
+    name_en: Senegal
+    vote_es111: "abstain"
+    vote_es114: "yes"
+    icc_rome_statute: true
+    putin_personal_sanctions: false
+
+  - iso3: ZAF
+    name_uk: ПАР
+    name_en: South Africa
+    vote_es111: "abstain"
+    vote_es114: "abstain"
+    icc_rome_statute: true
+    putin_personal_sanctions: false
+
+  - iso3: SSD
+    name_uk: Південний Судан
+    name_en: South Sudan
+    vote_es111: "abstain"
+    vote_es114: "abstain"
+    icc_rome_statute: false
+    putin_personal_sanctions: false
+
+  - iso3: SDN
+    name_uk: Судан
+    name_en: Sudan
+    vote_es111: "abstain"
+    vote_es114: "abstain"
+    icc_rome_statute: false
+    putin_personal_sanctions: false
+
+  - iso3: TZA
+    name_uk: Танзанія
+    name_en: Tanzania
+    vote_es111: "abstain"
+    vote_es114: "abstain"
+    icc_rome_statute: true
+    putin_personal_sanctions: false
+
+  - iso3: UGA
+    name_uk: Уганда
+    name_en: Uganda
+    vote_es111: "abstain"
+    vote_es114: "abstain"
+    icc_rome_statute: true
+    putin_personal_sanctions: false
+
+  - iso3: ZWE
+    name_uk: Зімбабве
+    name_en: Zimbabwe
+    vote_es111: "abstain"
+    vote_es114: "abstain"
+    icc_rome_statute: false
+    putin_personal_sanctions: false
+
+  - iso3: IRQ
+    name_uk: Ірак
+    name_en: Iraq
+    vote_es111: "abstain"
+    vote_es114: "abstain"
+    icc_rome_statute: false
+    putin_personal_sanctions: false
+
+  # ========== Ключові "absent" на ES-11/1 ==========
+
+  - iso3: AZE
+    name_uk: Азербайджан
+    name_en: Azerbaijan
+    vote_es111: "absent"
+    vote_es114: "absent"
+    icc_rome_statute: false
+    putin_personal_sanctions: false
+
+  - iso3: ETH
+    name_uk: Ефіопія
+    name_en: Ethiopia
+    vote_es111: "absent"
+    vote_es114: "yes"
+    icc_rome_statute: false
+    putin_personal_sanctions: false
+
+  - iso3: MAR
+    name_uk: Марокко
+    name_en: Morocco
+    vote_es111: "absent"
+    vote_es114: "absent"
+    icc_rome_statute: false
+    putin_personal_sanctions: false
+
+  - iso3: TKM
+    name_uk: Туркменістан
+    name_en: Turkmenistan
+    vote_es111: "absent"
+    vote_es114: "absent"
+    icc_rome_statute: false
+    putin_personal_sanctions: false
+
+  - iso3: UZB
+    name_uk: Узбекистан
+    name_en: Uzbekistan
+    vote_es111: "absent"
+    vote_es114: "absent"
+    icc_rome_statute: false
+    putin_personal_sanctions: false
+
+  - iso3: VEN
+    name_uk: Венесуела
+    name_en: Venezuela
+    vote_es111: "absent"
+    vote_es114: "no"
+    icc_rome_statute: true
+    putin_personal_sanctions: false
+
+  - iso3: BFA
+    name_uk: Буркіна-Фасо
+    name_en: Burkina Faso
+    vote_es111: "absent"
+    vote_es114: "absent"
+    icc_rome_statute: true
+    putin_personal_sanctions: false
+
+  # ========== Санкційники: персональні санкції проти В. Путіна ==========
+
+  - iso3: USA
+    name_uk: США
+    name_en: United States
+    vote_es111: "yes"
+    vote_es114: "yes"
+    icc_rome_statute: false
+    putin_personal_sanctions: true
+
+  - iso3: GBR
+    name_uk: Велика Британія
+    name_en: United Kingdom
+    vote_es111: "yes"
+    vote_es114: "yes"
+    icc_rome_statute: true
+    putin_personal_sanctions: true
+
+  - iso3: CAN
+    name_uk: Канада
+    name_en: Canada
+    vote_es111: "yes"
+    vote_es114: "yes"
+    icc_rome_statute: true
+    putin_personal_sanctions: true
+
+  - iso3: AUS
+    name_uk: Австралія
+    name_en: Australia
+    vote_es111: "yes"
+    vote_es114: "yes"
+    icc_rome_statute: true
+    putin_personal_sanctions: true
+
+  - iso3: JPN
+    name_uk: Японія
+    name_en: Japan
+    vote_es111: "yes"
+    vote_es114: "yes"
+    icc_rome_statute: true
+    putin_personal_sanctions: true
+
+  - iso3: NZL
+    name_uk: Нова Зеландія
+    name_en: New Zealand
+    vote_es111: "yes"
+    vote_es114: "yes"
+    icc_rome_statute: true
+    putin_personal_sanctions: true
+
+  - iso3: CHE
+    name_uk: Швейцарія
+    name_en: Switzerland
+    vote_es111: "yes"
+    vote_es114: "yes"
+    icc_rome_statute: true
+    putin_personal_sanctions: true
+
+  - iso3: NOR
+    name_uk: Норвегія
+    name_en: Norway
+    vote_es111: "yes"
+    vote_es114: "yes"
+    icc_rome_statute: true
+    putin_personal_sanctions: true
+
+  # ========== ЄС-санкційники (підмножина — Рада ЄС vote ==========
+
+  - iso3: DEU
+    name_uk: Німеччина
+    name_en: Germany
+    vote_es111: "yes"
+    vote_es114: "yes"
+    icc_rome_statute: true
+    putin_personal_sanctions: true
+
+  - iso3: FRA
+    name_uk: Франція
+    name_en: France
+    vote_es111: "yes"
+    vote_es114: "yes"
+    icc_rome_statute: true
+    putin_personal_sanctions: true
+
+  - iso3: POL
+    name_uk: Польща
+    name_en: Poland
+    vote_es111: "yes"
+    vote_es114: "yes"
+    icc_rome_statute: true
+    putin_personal_sanctions: true
+
+  - iso3: ITA
+    name_uk: Італія
+    name_en: Italy
+    vote_es111: "yes"
+    vote_es114: "yes"
+    icc_rome_statute: true
+    putin_personal_sanctions: true
+
+  - iso3: ESP
+    name_uk: Іспанія
+    name_en: Spain
+    vote_es111: "yes"
+    vote_es114: "yes"
+    icc_rome_statute: true
+    putin_personal_sanctions: true
+
+  - iso3: NLD
+    name_uk: Нідерланди
+    name_en: Netherlands
+    vote_es111: "yes"
+    vote_es114: "yes"
+    icc_rome_statute: true
+    putin_personal_sanctions: true
+
+  - iso3: SWE
+    name_uk: Швеція
+    name_en: Sweden
+    vote_es111: "yes"
+    vote_es114: "yes"
+    icc_rome_statute: true
+    putin_personal_sanctions: true
+
+  - iso3: FIN
+    name_uk: Фінляндія
+    name_en: Finland
+    vote_es111: "yes"
+    vote_es114: "yes"
+    icc_rome_statute: true
+    putin_personal_sanctions: true
+
+  - iso3: UKR
+    name_uk: Україна
+    name_en: Ukraine
+    vote_es111: "yes"
+    vote_es114: "yes"
+    icc_rome_statute: true  # ратифікація 21.08.2024, депонування 25.10.2024, чинність з 01.01.2025
+    putin_personal_sanctions: true

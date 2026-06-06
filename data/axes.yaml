@@ -1,0 +1,338 @@
+# axes.yaml — визначення осей легітимності, ваги та поточні скори.
+#
+# Кожний бал (0-100) сорсується подіями з events.yaml (поле `evidence_ids`)
+# або документами з icc_un_docs.yaml. Зміна точки в подіях → перерахунок бала.
+#
+# Поле `confidence`:
+#   - high     — повністю сорсований первинними документами
+#   - medium   — оцінений на основі агрегованих джерел (індекси/метаогляди)
+#   - preliminary — провізорний бал до повного наповнення даними (Дні 4-5)
+
+schema_version: 1
+
+axes:
+
+  # =====================================================================
+  # ВІСЬ A — ЮРИДИЧНО-ЕЛЕКТОРАЛЬНА
+  # =====================================================================
+  - id: A
+    title_uk: "Юридично-електоральна"
+    title_en: "Legal-electoral"
+    weight: 0.25
+    as_of: "2026-06-06"
+    confidence: high
+    score_zelensky: 80
+    score_putin: 28
+    formula: |
+      score = 0.30 * a1 + 0.30 * a2 + 0.20 * a3 + 0.20 * a4
+      де:
+        a1 — конституційність першого обрання
+        a2 — поточний статус мандата
+        a3 — допущення опозиції на останніх виборах
+        a4 — оцінка ОБСЄ/ОДІПЛ останніх виборів
+    components:
+
+      - id: a1
+        title_uk: "Конституційність первинного обрання"
+        title_en: "Constitutional basis of initial election"
+        weight: 0.30
+        point_zelensky: 95
+        point_putin: 60
+        evidence_ids:
+          - zelensky-2019-round2
+          - zelensky-2019-osce-assessment
+          - putin-2000-election
+        notes: |
+          Зеленський: 73,22% у 2-му турі, явка 62%, ОБСЄ оцінила як 'конкурентні'.
+          Путін 2000: 52,94% у 1-му турі, але ОБСЄ зафіксувала 'значну упередженість ЗМІ'.
+
+      - id: a2
+        title_uk: "Поточний статус мандата"
+        title_en: "Current mandate status"
+        weight: 0.30
+        point_zelensky: 50
+        point_putin: 25
+        evidence_ids:
+          - zelensky-2024-no-election
+          - zelensky-2024-venice-commission
+          - putin-2020-constitutional-reset
+          - putin-2024-election-occupied-territories
+          - putin-2022-annexation-claim
+        notes: |
+          Зеленський: 5-річний термін формально завершився 2024-05-20.
+          Продовження повноважень — ст. 19 ЗУ 'Про правовий режим воєнного стану'
+          (заборона виборів) + ст. 83 Конституції. Венеціанська комісія
+          (CDL-AD(2024)003) підтримала юридичну неможливість виборів. Але
+          фактично новий мандат від виборця відсутній.
+          Путін: мандат 2024 здобуто з голосуванням на ТОТ України, що не визнано
+          міжнародно (резолюція ГА ООН ES-11/4). 'Обнулення' 2020 розкритиковане
+          Венеціанською комісією (CDL-AD(2021)005) як 'що значно порушує баланс
+          гілок влади'.
+
+      - id: a3
+        title_uk: "Допущення опозиції на останніх виборах"
+        title_en: "Opposition admittance at last election"
+        weight: 0.20
+        point_zelensky: 95
+        point_putin: 5
+        evidence_ids:
+          - zelensky-2019-round1
+          - putin-2024-opposition-excluded
+        notes: |
+          Зеленський (останні вибори — 2019): 39 кандидатів допущено, серед них
+          П. Порошенко, Ю. Тимошенко, А. Гриценко тощо.
+          Путін (останні — 2024): антивоєнного Б. Надєждіна не зареєстровано;
+          О. Навальний — заборона з 2018 і смерть у в'язниці у лютому 2024.
+
+      - id: a4
+        title_uk: "Оцінка ОБСЄ/ОДІПЛ останніх виборів"
+        title_en: "OSCE/ODIHR assessment of last election"
+        weight: 0.20
+        point_zelensky: 90
+        point_putin: 5
+        evidence_ids:
+          - zelensky-2019-osce-assessment
+          - putin-2024-election-occupied-territories
+        notes: |
+          Зеленський: ОБСЄ '2019: 'competitive, with respect for fundamental
+          freedoms'.
+          Путін 2024: ОБСЄ/ОДІПЛ не спостерігала через 'обмеження для забезпечення
+          кредибельної місії'.
+    sources:
+      - https://www.osce.org/odihr/elections/ukraine
+      - https://www.osce.org/odihr/elections/russia
+      - https://www.venice.coe.int/webforms/documents/default.aspx?pdffile=CDL-AD(2024)003-e
+      - https://www.venice.coe.int/webforms/documents/default.aspx?pdffile=CDL-AD(2021)005-e
+      - https://zakon.rada.gov.ua/laws/show/389-19
+
+  # =====================================================================
+  # ВІСЬ B — МІЖНАРОДНЕ ВИЗНАННЯ
+  # =====================================================================
+  - id: B
+    title_uk: "Міжнародне визнання"
+    title_en: "International recognition"
+    weight: 0.25
+    as_of: "2026-06-06"
+    confidence: high
+    score_zelensky: 99
+    score_putin: 32
+    formula: |
+      score = 0.25 * b1 + 0.25 * b2 + 0.20 * b3 + 0.30 * b4
+      де:
+        b1 — визнання керівником держави (% держав ООН)
+        b2 — ордери міжнародних судів (інверсний; нема ордерів = 100)
+        b3 — персональні санкції G7/ЄС (інверсний; нема санкцій = 100)
+        b4 — статус у міжнародних форумах
+    components:
+
+      - id: b1
+        title_uk: "Визнання керівником держави"
+        title_en: "Recognition as head of state"
+        weight: 0.25
+        point_zelensky: 100
+        point_putin: 80
+        evidence_ids:
+          - zelensky-2024-no-personal-sanctions
+          - putin-2023-mongolia-non-arrest
+        notes: |
+          Зеленський: 193 держави-члени ООН визнають як главу держави.
+          Путін: формально визнають усі 193, АЛЕ G7 + ЄС суттєво знизили рівень
+          дипломатичного контакту; візити обмежені (Монголія 2024 — рідкісний
+          виняток). РФ зберігає постійне місце в РБ ООН.
+
+      - id: b2
+        title_uk: "Ордери міжнародних судів"
+        title_en: "International court warrants"
+        weight: 0.25
+        point_zelensky: 100
+        point_putin: 5
+        evidence_ids:
+          - putin-2023-icc-warrant
+          - putin-2024-icc-shoigu-gerasimov
+        notes: |
+          Зеленський: ордерів не існує.
+          Путін: персональний ордер ICC від 2023-03-17 (вивезення дітей);
+          супутні ордери на Шойгу, Герасимова, Кобилаша, Соколова за атаки на
+          цивільну інфраструктуру.
+
+      - id: b3
+        title_uk: "Персональні санкції G7/ЄС"
+        title_en: "Personal G7/EU sanctions"
+        weight: 0.20
+        point_zelensky: 100
+        point_putin: 0
+        evidence_ids:
+          - putin-2022-eu-personal-sanctions
+          - zelensky-2024-no-personal-sanctions
+        notes: |
+          Зеленський: жодних санкцій.
+          Путін: персональні санкції ЄС (Регл. 2022/336), США (OFAC SDN), Великої
+          Британії, Канади, Австралії, Японії, Нової Зеландії.
+
+      - id: b4
+        title_uk: "Статус у міжнародних форумах"
+        title_en: "Status in international fora"
+        weight: 0.30
+        point_zelensky: 95
+        point_putin: 35
+        evidence_ids:
+          - zelensky-2022-unga-resolution-es111
+          - zelensky-2022-us-congress-address
+          - zelensky-2023-g7-hiroshima
+          - zelensky-2024-bilateral-security-agreements
+          - putin-2022-coe-expulsion
+          - putin-2022-unga-hrc-suspension
+          - putin-2023-g20-skipped
+        notes: |
+          Зеленський: ООН-резолюції на користь України (ES-11/1: 141 'за'),
+          виступи у Конгресі США, Бундестазі, Європарламенті; саміти G7 у Хіросімі;
+          20+ двосторонніх безпекових угод по Вільнюській декларації.
+          Путін: виключення РФ з Ради Європи (16.03.2022), призупинення в РПЛ ООН
+          (07.04.2022), послідовний пропуск самітів G20, виключення з G8 (2014).
+          РФ зберігає членство в ООН і РБ ООН.
+    sources:
+      - https://digitallibrary.un.org/record/3965290
+      - https://digitallibrary.un.org/record/3967778
+      - https://digitallibrary.un.org/record/3990341
+      - https://www.icc-cpi.int/news/situation-ukraine-icc-judges-issue-arrest-warrants-against-vladimir-vladimirovich-putin-and
+      - https://www.consilium.europa.eu/en/press/press-releases/2022/02/25/russia-eu-adopts-sanctions-against-president-putin-and-foreign-minister-lavrov/
+      - https://www.coe.int/en/web/portal/-/the-russian-federation-is-excluded-from-the-council-of-europe
+
+  # =====================================================================
+  # ВІСЬ C — ВНУТРІШНЯ ПІДТРИМКА
+  # =====================================================================
+  - id: C
+    title_uk: "Внутрішня підтримка"
+    title_en: "Domestic support"
+    weight: 0.25
+    as_of: "2026-04-15"
+    confidence: medium
+    score_zelensky: 65
+    score_putin: 60
+    formula: |
+      score = 0.55 * c1 + 0.20 * c2 + 0.25 * c3
+      де:
+        c1 — середня довіра 3 міс. незалежним поллстерам
+        c2 — розрив незалежні vs державні (малий = краще, інверсний)
+        c3 — свобода поллінгового середовища
+    components:
+
+      - id: c1
+        title_uk: "Середня довіра (3 міс., незалежні поллстери)"
+        title_en: "Mean trust (3 mo., independent pollsters)"
+        weight: 0.55
+        point_zelensky: 57
+        point_putin: 84
+        evidence_ids: []
+        notes: |
+          Дані з polls_*.csv (anchor-точки 2024-2026):
+          Z: середнє KIIS(57) + Razumkov(55) + Rating(60) = 57%.
+          P: Levada(84-87%) → середнє 84%. ВЦИОМ і ФОМ — у c2 (стейт-розрив).
+
+      - id: c2
+        title_uk: "Розрив незалежні vs державні поллстери (інверсний)"
+        title_en: "Gap between independent and state pollsters (inverse)"
+        weight: 0.20
+        point_zelensky: 70
+        point_putin: 50
+        evidence_ids: []
+        notes: |
+          UA: 'державних' поллстерів немає — розрив не вимірюється, конвенційний
+          бал 70. RU: Levada(85) vs VTsIOM(81)/FOM(80) — розрив ~4-5 п.п.
+          (історично невеликий), АЛЕ Levada під тиском ('іноагент'), і це знижує
+          бал нижче, ніж математичний розрив. Підсумок 50.
+
+      - id: c3
+        title_uk: "Свобода поллінгового середовища"
+        title_en: "Polling environment freedom"
+        weight: 0.25
+        point_zelensky: 80
+        point_putin: 15
+        evidence_ids: []
+        notes: |
+          UA: воєнний стан → деякі регіони/ТОТ недоступні, але незалежні поллери
+          працюють (КМІС, Разумков, Rating, Info Sapiens, SOCIS). Багато опитувань
+          проводяться.
+          RU: Левада — 'іноагент' з 2016, постійний тиск; питання про 'СВО' під
+          ризиком 'дискредитації ЗС РФ' (ст. 280.3 КК РФ); незалежні поллери
+          (Russian Field, Chronicles) працюють у напівпідпіллі.
+    sources:
+      - https://www.kiis.com.ua/
+      - https://razumkov.org.ua/
+      - https://ratinggroup.ua/
+      - https://www.levada.ru/
+
+  # =====================================================================
+  # ВІСЬ D — КОНТРОЛЬ ТЕРИТОРІЇ ТА ВЕРХОВЕНСТВО ПРАВА
+  # =====================================================================
+  - id: D
+    title_uk: "Контроль території та верховенство права"
+    title_en: "Territorial control and rule of law"
+    weight: 0.25
+    as_of: "2026-06-30"
+    confidence: medium
+    score_zelensky: 58
+    score_putin: 41
+    formula: |
+      score = 0.30 * d1*100 + 0.20 * d2 + 0.20 * d3 + 0.30 * d4
+      де:
+        d1 — V-Dem Liberal Democracy (0-1)
+        d2 — Freedom House Global Freedom (0-100)
+        d3 — RSF Press Freedom (0-100)
+        d4 — контроль території (% від міжнародно визнаної, 0-100)
+    components:
+
+      - id: d1
+        title_uk: "V-Dem Liberal Democracy Index"
+        title_en: "V-Dem Liberal Democracy Index"
+        weight: 0.30
+        point_zelensky: 38
+        point_putin: 7
+        evidence_ids: []
+        notes: |
+          V-Dem v14 dataset (2024): UA Liberal Democracy = 0.38 (×100 = 38);
+          RU = 0.07. Динаміка по роках — у indices.csv.
+
+      - id: d2
+        title_uk: "Freedom House Global Freedom"
+        title_en: "Freedom House Global Freedom"
+        weight: 0.20
+        point_zelensky: 49
+        point_putin: 13
+        evidence_ids: []
+        notes: |
+          Freedom in the World 2024: UA 49/100 'Partly Free' (зниження з 60 у 2019
+          через воєнні обмеження); RU 13/100 'Not Free' (з 20 у 2019).
+
+      - id: d3
+        title_uk: "RSF Press Freedom"
+        title_en: "RSF Press Freedom"
+        weight: 0.20
+        point_zelensky: 64
+        point_putin: 30
+        evidence_ids: []
+        notes: |
+          RSF Press Freedom Index 2024: UA 64.4 (rank ~61, покращення з 60 у 2019);
+          RU 29.9 (rank ~162, падіння з 51 у 2019). Парадоксально UA покращила
+          місце з-за виходу багатьох країн (війна перетасувала рейтинг).
+
+      - id: d4
+        title_uk: "Контроль території (%)"
+        title_en: "Territorial control (%)"
+        weight: 0.30
+        point_zelensky: 80
+        point_putin: 100
+        evidence_ids:
+          - putin-2022-annexation-claim
+        notes: |
+          UA контролює ~80% території у межах 1991 року (зріз 2026-Q2 за ISW
+          Russian Offensive Campaign Assessment + DeepStateMAP). Втрата: Крим
+          повністю з 2014, частини Донецької/Луганської/Запорізької/Херсонської
+          областей, малі шматки Харківської і Сумської. Динаміку по кварталах
+          див. data/territory_control.csv (18 точок з 2022-Q1).
+          RU контролює 100% своєї міжнародно визнаної території; '+4 нові
+          регіони' міжнародно не визнаються (резолюція ГА ООН ES-11/4, 143 'за').
+    sources:
+      - https://v-dem.net/
+      - https://freedomhouse.org/
+      - https://rsf.org/

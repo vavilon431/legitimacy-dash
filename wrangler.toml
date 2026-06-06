@@ -1,0 +1,5 @@
+name = "legitimacy-dash"
+compatibility_date = "2026-06-06"
+# Поки збираємо без build-step — корінь проекту і є output dir.
+# Коли додамо scripts/build.py (рендер i18n у dist/), змінимо на "dist".
+pages_build_output_dir = "."

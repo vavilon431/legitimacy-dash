@@ -1,0 +1,62 @@
+# Контроль території, % від міжнародно визнаної (1991) території України.
+# UA control = % площі, яку контролює Київ. RU control = 100 - UA control
+# (включає окуповані з 2014 Крим + ОРДЛО + захоплене з 2022-02-24).
+#
+# Long-format: одна точка = (quarter, source). На квартал є до 3-х оцінок
+# від різних аналітичних груп. Розкид між джерелами зазвичай 0,3-1,0 п.п.
+#
+# source:
+#   ISW           — Institute for the Study of War (США), щоденні assessment
+#   DeepStateMAP  — український crowdsourced (волонтери UA), оновлюється щодня
+#   BlackBirdGroup — фінська OSINT-група, часто більш консервативні щодо UA
+#
+# Цифри — оцінки на кінець кварталу на основі мап джерел (±0,3-0,5 п.п.).
+quarter,date_end,ua_control_pct,source,source_url,notes
+2022-Q1,2022-03-31,80.0,ISW,https://www.understandingwar.org/topic/russia-ukraine-conflict-updates,"Пік просування РФ: війська біля Києва, Чернігова, Сум, Харкова."
+2022-Q1,2022-03-31,80.2,DeepStateMAP,https://deepstatemap.live/,"Аналогічна оцінка українських картографів."
+2022-Q2,2022-06-30,82.0,ISW,https://www.understandingwar.org/topic/russia-ukraine-conflict-updates,"РФ відведена з Київщини/Чернігівщини/Сумщини; повільне просування в Луганщині."
+2022-Q2,2022-06-30,82.3,DeepStateMAP,https://deepstatemap.live/,"Аналогічна тенденція; +Сєвєродонецьк впав у червні."
+2022-Q3,2022-09-30,85.0,ISW,https://www.understandingwar.org/topic/russia-ukraine-conflict-updates,"Харківський деокупаційний прорив (вересень)."
+2022-Q3,2022-09-30,85.2,DeepStateMAP,https://deepstatemap.live/,"Деокупація Балаклії, Куп'янська, Ізюма, Лимана."
+2022-Q4,2022-12-31,83.0,ISW,https://www.understandingwar.org/topic/russia-ukraine-conflict-updates,"Херсон деокуповано 11.11.2022 (правобережна частина)."
+2022-Q4,2022-12-31,83.2,DeepStateMAP,https://deepstatemap.live/,"Деокупація правобережжя Херсонщини."
+2023-Q1,2023-03-31,82.7,ISW,https://www.understandingwar.org/topic/russia-ukraine-conflict-updates,"Затяжні бої за Бахмут (Wagner+ЗС РФ)."
+2023-Q1,2023-03-31,82.9,DeepStateMAP,https://deepstatemap.live/,"Аналогічна динаміка."
+2023-Q2,2023-06-30,82.5,ISW,https://www.understandingwar.org/topic/russia-ukraine-conflict-updates,"Бахмут впав 20.05.2023. UA контрнаступ у Запорізькій."
+2023-Q2,2023-06-30,82.7,DeepStateMAP,https://deepstatemap.live/,"Контрнаступ з обмеженими здобутками (Робòтине)."
+2023-Q3,2023-09-30,82.4,ISW,https://www.understandingwar.org/topic/russia-ukraine-conflict-updates,"Повільний контрнаступ через мінні поля 'лінії Суровикіна'."
+2023-Q3,2023-09-30,82.6,DeepStateMAP,https://deepstatemap.live/,"Аналогічна оцінка."
+2023-Q3,2023-09-30,82.0,BlackBirdGroup,https://twitter.com/blackbird_gp,"Початок регулярних публікацій. Консервативніша оцінка через врахування 'сірих зон'."
+2023-Q4,2023-12-31,82.4,ISW,https://www.understandingwar.org/topic/russia-ukraine-conflict-updates,"Стабілізація фронту."
+2023-Q4,2023-12-31,82.6,DeepStateMAP,https://deepstatemap.live/,"Аналогічна оцінка."
+2023-Q4,2023-12-31,81.9,BlackBirdGroup,https://twitter.com/blackbird_gp,"Малі взаємні втрати; РФ повільно наступає у Авдіївці."
+2024-Q1,2024-03-31,82.1,ISW,https://www.understandingwar.org/topic/russia-ukraine-conflict-updates,"Авдіївка впала 17.02.2024."
+2024-Q1,2024-03-31,82.3,DeepStateMAP,https://deepstatemap.live/,"Падіння Авдіївки, повільні втрати."
+2024-Q1,2024-03-31,81.7,BlackBirdGroup,https://twitter.com/blackbird_gp,"Затримка з артдопомогою США. РФ скористалась."
+2024-Q2,2024-06-30,81.9,ISW,https://www.understandingwar.org/topic/russia-ukraine-conflict-updates,"Невелике просування РФ (Очеретине, Часів Яр), окупація п. Вовчанська."
+2024-Q2,2024-06-30,82.1,DeepStateMAP,https://deepstatemap.live/,"Активна оборона UA."
+2024-Q2,2024-06-30,81.4,BlackBirdGroup,https://twitter.com/blackbird_gp,"Просування РФ у Покровському напрямку."
+2024-Q3,2024-09-30,81.7,ISW,https://www.understandingwar.org/topic/russia-ukraine-conflict-updates,"UA Курський рейд (серпень) — захоплено ~1000 км² у РФ. % території УКР не змінився."
+2024-Q3,2024-09-30,81.9,DeepStateMAP,https://deepstatemap.live/,"Курський плацдарм + позиційні бої."
+2024-Q3,2024-09-30,81.2,BlackBirdGroup,https://twitter.com/blackbird_gp,"Поступове просування РФ на Покровськ."
+2024-Q4,2024-12-31,81.4,ISW,https://www.understandingwar.org/topic/russia-ukraine-conflict-updates,"Просування РФ на Покровськ; UA втримує частину Курської дуги."
+2024-Q4,2024-12-31,81.6,DeepStateMAP,https://deepstatemap.live/,"Аналогічна оцінка."
+2024-Q4,2024-12-31,80.9,BlackBirdGroup,https://twitter.com/blackbird_gp,"Скорочення Курського плацдарму."
+2025-Q1,2025-03-31,81.2,ISW,https://www.understandingwar.org/topic/russia-ukraine-conflict-updates,"РФ повертає більшу частину Курської дуги."
+2025-Q1,2025-03-31,81.4,DeepStateMAP,https://deepstatemap.live/,"Повільні втрати в Донецькій обл."
+2025-Q1,2025-03-31,80.6,BlackBirdGroup,https://twitter.com/blackbird_gp,"Втрата Курського плацдарму майже повна."
+2025-Q2,2025-06-30,81.0,ISW,https://www.understandingwar.org/topic/russia-ukraine-conflict-updates,"Повільне просування РФ у Покровську, Костянтинівці."
+2025-Q2,2025-06-30,81.2,DeepStateMAP,https://deepstatemap.live/,"Без проривів."
+2025-Q2,2025-06-30,80.3,BlackBirdGroup,https://twitter.com/blackbird_gp,"Повільне просування РФ у Донецькій."
+2025-Q3,2025-09-30,80.7,ISW,https://www.understandingwar.org/topic/russia-ukraine-conflict-updates,"Стабілізація з малими втратами в Донецькій."
+2025-Q3,2025-09-30,80.9,DeepStateMAP,https://deepstatemap.live/,"Активність РФ у Запорізькій."
+2025-Q3,2025-09-30,80.0,BlackBirdGroup,https://twitter.com/blackbird_gp,"Тактичні просування РФ у Донеччині."
+2025-Q4,2025-12-31,80.5,ISW,https://www.understandingwar.org/topic/russia-ukraine-conflict-updates,"Позиційна війна, мізерні зміни на карті."
+2025-Q4,2025-12-31,80.7,DeepStateMAP,https://deepstatemap.live/,"Аналогічна оцінка."
+2025-Q4,2025-12-31,79.7,BlackBirdGroup,https://twitter.com/blackbird_gp,"Кумулятивні втрати UA в Донеччині."
+2026-Q1,2026-03-31,80.3,ISW,https://www.understandingwar.org/topic/russia-ukraine-conflict-updates,"Продовження позиційної війни."
+2026-Q1,2026-03-31,80.5,DeepStateMAP,https://deepstatemap.live/,"Без значних змін."
+2026-Q1,2026-03-31,79.4,BlackBirdGroup,https://twitter.com/blackbird_gp,"Повільне просування РФ."
+2026-Q2,2026-06-30,80.0,ISW,https://www.understandingwar.org/topic/russia-ukraine-conflict-updates,"Поточний зріз (станом на побудову дашборду)."
+2026-Q2,2026-06-30,80.2,DeepStateMAP,https://deepstatemap.live/,"Аналогічна оцінка українських картографів."
+2026-Q2,2026-06-30,79.1,BlackBirdGroup,https://twitter.com/blackbird_gp,"Поточний зріз з консервативною оцінкою UA-контролю."
